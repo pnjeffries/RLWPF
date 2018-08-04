@@ -1,0 +1,83 @@
+﻿<Window x:Class="RLWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RLWPF"
+        mc:Ignorable="d"
+        Title="Roguelike Test" Height="350" Width="525"
+        KeyDown="Key_Down"
+        KeyUp="Key_Up">
+    <Window.Resources>
+        <local:ASCIIConverter x:Key="ASCIIConverter"/>
+        <local:VisibilityOpacityConverter x:Key="VisibilityOpacityConverter"/>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#111143" Offset="0"/>
+            <GradientStop Color="#514149" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Name="LayoutRoot">
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#225151AA" Offset="0"/>
+                <GradientStop Color="#74611999" Offset="1"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Sidebar-->
+        <Grid>
+            <Viewbox>
+                <TextBlock Text=" |██████████=====| " Foreground="LightSteelBlue" HorizontalAlignment="Center"
+                           Margin="10">
+                
+            </TextBlock>
+            </Viewbox>
+        </Grid>
+        <Viewbox Grid.Column="1">
+            <ItemsControl ItemsSource="{Binding Path=State.Stage.Map}" HorizontalAlignment="Stretch" Margin="4">
+                <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="{Binding Path=State.Stage.Map.SizeX}"/>
+                </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Width="16" Height="16" FontSize="14"
+                                   TextAlignment="Center" Padding ="0,-4,0,0" Margin="0" 
+                                   Text="{Binding Path=Contents, Converter={StaticResource ASCIIConverter}}">
+                            <TextBlock.Opacity>
+                                <MultiBinding Converter="{StaticResource VisibilityOpacityConverter}">
+                                    <Binding/>
+                                    <Binding ElementName="LayoutRoot" Path="DataContext.State.Controlled.Data[MapAwareness].FieldOfView"/>
+                                </MultiBinding>
+                            </TextBlock.Opacity>
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="LightSteelBlue" Offset="0"/>
+                                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                            <TextBlock.LayoutTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="-1" />
+                            </TextBlock.LayoutTransform>
+                            </TextBlock>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.LayoutTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                </ItemsControl.LayoutTransform>
+                <ItemsControl.BitmapEffect>
+                    <DropShadowBitmapEffect Direction="45" Opacity="1"
+                                            ShadowDepth="1" Softness="0.15"></DropShadowBitmapEffect>
+                </ItemsControl.BitmapEffect>
+            </ItemsControl>
+            
+        </Viewbox>
+    </Grid>
+</Window>
