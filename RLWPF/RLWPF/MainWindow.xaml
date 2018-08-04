@@ -9,38 +9,63 @@
         KeyDown="Key_Down"
         KeyUp="Key_Up">
     <Window.Resources>
+        
+        <!--Converters-->
         <local:ASCIIConverter x:Key="ASCIIConverter"/>
         <local:VisibilityOpacityConverter x:Key="VisibilityOpacityConverter"/>
+
+        <!--Text Style-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="LightSteelBlue"/>
+        </Style>
+        
     </Window.Resources>
     <Window.Background>
         <LinearGradientBrush>
-            <GradientStop Color="#111143" Offset="0"/>
+            <GradientStop Color="#111163" Offset="0"/>
             <GradientStop Color="#514149" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid Name="LayoutRoot">
         <Grid.Background>
             <RadialGradientBrush>
-                <GradientStop Color="#225151AA" Offset="0"/>
+                <GradientStop Color="#3219B999" Offset="0"/>
                 <GradientStop Color="#74611999" Offset="1"/>
             </RadialGradientBrush>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
+        
         
         <!--Sidebar-->
-        <Grid>
-            <Viewbox>
-                <TextBlock Text=" |██████████=====| " Foreground="LightSteelBlue" HorizontalAlignment="Center"
-                           Margin="10">
-                
-            </TextBlock>
-            </Viewbox>
-        </Grid>
-        <Viewbox Grid.Column="1">
-            <ItemsControl ItemsSource="{Binding Path=State.Stage.Map}" HorizontalAlignment="Stretch" Margin="4">
+
+        <Viewbox>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.BitmapEffect>
+                    <DropShadowBitmapEffect Direction="315" Opacity="1"
+                                            ShadowDepth="1" Softness="0.15"></DropShadowBitmapEffect>
+                </Grid.BitmapEffect>
+
+                <Grid Grid.Column="0">
+                    <StackPanel>
+                        <TextBlock Text="HP: |█████=========|"/>
+                        <TextBlock Text="ST: |███======|"/>
+                        <TextBlock Text="RH: Short Sword"/>
+                        <TextBlock Text="LH: Round Shield"/>
+                        <TextBlock Text="- - - - - - - - -" HorizontalAlignment="Center"/>
+                        <TextBlock Text="1: Red Potion"/>
+                        <TextBlock Text="2: Ocarina"/>
+                        <TextBlock Text="3: Rhubarb (Cursed)"/>
+                        <TextBlock Text="4: "/>
+                        <TextBlock Text="5: "/>
+                        <TextBlock Text="6: "/>
+                    </StackPanel>
+                </Grid>
+
+                <ItemsControl Grid.Column="1" ItemsSource="{Binding Path=State.Stage.Map}" HorizontalAlignment="Stretch" Margin="4">
                 <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="{Binding Path=State.Stage.Map.SizeX}"/>
@@ -72,12 +97,10 @@
                 <ItemsControl.LayoutTransform>
                     <ScaleTransform ScaleX="1" ScaleY="-1" />
                 </ItemsControl.LayoutTransform>
-                <ItemsControl.BitmapEffect>
-                    <DropShadowBitmapEffect Direction="45" Opacity="1"
-                                            ShadowDepth="1" Softness="0.15"></DropShadowBitmapEffect>
-                </ItemsControl.BitmapEffect>
+                
             </ItemsControl>
-            
+            </Grid>
         </Viewbox>
+               
     </Grid>
 </Window>

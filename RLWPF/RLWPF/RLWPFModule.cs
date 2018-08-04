@@ -59,7 +59,7 @@ namespace RLWPF
 
             // Create test enemy
             var enemy = new PointElement("Enemy");
-            enemy.SetData(new ASCIIStyle("M"));//, new MapCellCollider());
+            enemy.SetData(new ASCIIStyle("▄"));//, new MapCellCollider());
             map[4, 3].PlaceInCell(enemy);
 
             var enemy2 = new PointElement("Enemy");
