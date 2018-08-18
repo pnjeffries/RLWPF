@@ -1,0 +1,82 @@
+﻿<Window x:Class="RLWPF.ArtitectTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RLWPF"
+        mc:Ignorable="d"
+        Title="ArtitectTest" Height="300" Width="300">
+    <Window.Resources>
+
+        <!--Converters-->
+        <local:ASCIIBlueprintConverter x:Key="ASCIIBlueprintConverter"/>
+
+        <!--Text Style-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="LightSteelBlue"/>
+        </Style>
+
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="#111163" Offset="0"/>
+            <GradientStop Color="#514149" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Name="LayoutRoot">
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#3200B9B9" Offset="0"/>
+                <GradientStop Color="#74611999" Offset="1"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0.5">
+                    <GradientStop Color="#00FFFFFF" Offset="0.25"/>
+                    <GradientStop Color="#10FFFFFF" Offset="0.4"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.6"/>
+                    <GradientStop Color="#08FFFFFF" Offset="0.8"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.95"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Viewbox>
+            <Grid>
+                <ItemsControl Grid.Column="1" ItemsSource="{Binding Path=Blueprint}" HorizontalAlignment="Stretch" Margin="4">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding Path=Blueprint.SizeX}"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Width="16" Height="16" FontSize="14"
+                                   TextAlignment="Center" Padding ="0,-4,0,0" Margin="0" Text="{Binding Converter={StaticResource ASCIIBlueprintConverter}}">
+                                      
+                                <TextBlock.Foreground>
+                                    <LinearGradientBrush>
+                                        <GradientStop Color="LightSteelBlue" Offset="0"/>
+                                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TextBlock.Foreground>
+                                <TextBlock.LayoutTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.LayoutTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="-1" />
+                    </ItemsControl.LayoutTransform>
+
+                </ItemsControl>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</Window>

@@ -20,3 +20,5 @@ C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\RLWPF.csproj.CoreC
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\RLWPF.exe
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\RLWPF.pdb
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\ArtitectTest.g.cs
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RLWPF\obj\Debug\ArtitectTest.baml

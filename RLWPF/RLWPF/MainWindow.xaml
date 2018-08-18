@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RLWPF"
         mc:Ignorable="d"
-        Title="Roguelike Test" Height="350" Width="525"
+        Title="Roguelike Test" Height="420" Width="640"
         KeyDown="Key_Down"
         KeyUp="Key_Up">
     <Window.Resources>
@@ -30,12 +30,23 @@
     <Grid Name="LayoutRoot">
         <Grid.Background>
             <RadialGradientBrush>
-                <GradientStop Color="#3219B999" Offset="0"/>
+                <GradientStop Color="#3200B9B9" Offset="0"/>
                 <GradientStop Color="#74611999" Offset="1"/>
             </RadialGradientBrush>
         </Grid.Background>
-        
-        
+
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0.5">
+                    <GradientStop Color="#00FFFFFF" Offset="0.25"/>
+                    <GradientStop Color="#10FFFFFF" Offset="0.4"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.5"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.6"/>
+                    <GradientStop Color="#08FFFFFF" Offset="0.8"/>
+                    <GradientStop Color="#00FFFFFF" Offset="0.95"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
         <!--Sidebar-->
 
         <Viewbox>
@@ -51,17 +62,19 @@
 
                 <Grid Grid.Column="0">
                     <StackPanel>
-                        <TextBlock Text="HP: |█████=========|"/>
-                        <TextBlock Text="ST: |███======|"/>
-                        <TextBlock Text="RH: Short Sword"/>
-                        <TextBlock Text="LH: Round Shield"/>
+                        <TextBlock Text="HP: |█████---------|"/>
+                        <TextBlock Text="O2: |███-----------|"/>
+                        <TextBlock Text="MW: Knife"/>
+                        <TextBlock Text="RW: Harpoon Gun [5]"/>
                         <TextBlock Text="- - - - - - - - -" HorizontalAlignment="Center"/>
-                        <TextBlock Text="1: Red Potion"/>
-                        <TextBlock Text="2: Ocarina"/>
-                        <TextBlock Text="3: Rhubarb (Cursed)"/>
+                        <TextBlock Text="1: Ink Sac"/>
+                        <TextBlock Text="2: Healing Salve"/>
+                        <TextBlock Text="3: Torpedo [3]"/>
                         <TextBlock Text="4: "/>
                         <TextBlock Text="5: "/>
                         <TextBlock Text="6: "/>
+                        <TextBlock Text="- - - - - - - - -" HorizontalAlignment="Center"/>
+                        <TextBlock Text="..." TextWrapping="WrapWithOverflow"/>
                     </StackPanel>
                 </Grid>
 
@@ -73,16 +86,22 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Width="16" Height="16" FontSize="14"
-                                   TextAlignment="Center" Padding ="0,-4,0,0" Margin="0" 
-                                   Text="{Binding Path=Contents, Converter={StaticResource ASCIIConverter}}">
-                            <TextBlock.Opacity>
-                                <MultiBinding Converter="{StaticResource VisibilityOpacityConverter}">
-                                    <Binding/>
-                                    <Binding ElementName="LayoutRoot" Path="DataContext.State.Controlled.Data[MapAwareness].FieldOfView"/>
-                                </MultiBinding>
-                            </TextBlock.Opacity>
-                            <TextBlock.Foreground>
+                            <TextBlock Width="16" Height="16" FontSize="14"
+                                   TextAlignment="Center" Padding ="0,-4,0,0" Margin="0">
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource ASCIIConverter}">
+                                        <Binding Path="Contents"/>
+                                        <Binding ElementName="LayoutRoot" Path="DataContext.State.Controlled.Data[MapAwareness].FieldOfView"/>
+                                        <Binding Path="Index"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                                <TextBlock.Opacity>
+                                    <MultiBinding Converter="{StaticResource VisibilityOpacityConverter}">
+                                        <Binding/>
+                                        <Binding ElementName="LayoutRoot" Path="DataContext.State.Controlled.Data[MapAwareness].FieldOfView"/>
+                                    </MultiBinding>
+                                </TextBlock.Opacity>
+                                <TextBlock.Foreground>
                                 <LinearGradientBrush>
                                     <GradientStop Color="LightSteelBlue" Offset="0"/>
                                     <GradientStop Color="LightSteelBlue" Offset="1"/>

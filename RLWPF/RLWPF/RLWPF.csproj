@@ -54,9 +54,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ArtitectTest.xaml.cs">
+      <DependentUpon>ArtitectTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArtitectTester.cs" />
+    <Compile Include="ASCIIBlueprintConverter.cs" />
     <Compile Include="ASCIIConverter.cs" />
     <Compile Include="RLWPFModule.cs" />
     <Compile Include="VisibilityOpacityConverter.cs" />
+    <Page Include="ArtitectTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

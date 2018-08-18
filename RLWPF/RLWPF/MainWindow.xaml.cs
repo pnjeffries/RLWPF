@@ -43,6 +43,11 @@ namespace RLWPF
         {
             if (_KeyMapping.ContainsKey(e.Key))
                 GameEngine.Instance.Input.InputPress(_KeyMapping[e.Key]);
+            else if (e.Key == Key.T)
+            {
+                var testWin = new ArtitectTest();
+                testWin.Show();
+            }
         }
 
         private void Key_Up(object sender, KeyEventArgs e)
