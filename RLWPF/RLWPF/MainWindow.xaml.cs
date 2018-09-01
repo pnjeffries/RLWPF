@@ -37,6 +37,7 @@ namespace RLWPF
             _KeyMapping.Add(Key.Down, InputFunction.Down);
             _KeyMapping.Add(Key.Left, InputFunction.Left);
             _KeyMapping.Add(Key.Right, InputFunction.Right);
+            _KeyMapping.Add(Key.Space, InputFunction.Wait);
         }
 
         private void Key_Down(object sender, KeyEventArgs e)

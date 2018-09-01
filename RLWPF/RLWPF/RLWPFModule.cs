@@ -96,8 +96,11 @@ namespace RLWPF
             // Create player character
             var hero = new PointElement("Hero");
             hero.SetData(new ASCIIStyle("@"), new MapCellCollider(), 
-                new MapAwareness(10), new Memorable());
+                new MapAwareness(10), new Memorable(), 
+                new AvailableActions(), new TurnCounter(),
+                new WaitAbility(), new MoveCellAbility());
             map[10,13].PlaceInCell(hero);
+            state.Elements.Add(hero);
             state.Controlled = hero;
 
                     
