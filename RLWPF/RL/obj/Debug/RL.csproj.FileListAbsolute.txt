@@ -1,0 +1,16 @@
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\RL.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\RL.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Game.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Game.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.xml
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.csproj.CoreCompileInputs.cache
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Unity.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Unity.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Unity.xml
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.csprojAssemblyReference.cache
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.csproj.CopyComplete

@@ -1,0 +1,2451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nucleus.WPF</name>
+    </assembly>
+    <members>
+        <member name="T:Nucleus.WPF.AlertErrorIcon">
+            <summary>
+            Interaction logic for AlertErrorIcon.xaml
+            </summary>
+            <summary>
+            AlertErrorIcon
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertErrorIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AlertFailIcon">
+            <summary>
+            Interaction logic for AlertFailIcon.xaml
+            </summary>
+            <summary>
+            AlertFailIcon
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertFailIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AlertPassIcon">
+            <summary>
+            Interaction logic for AlertPassIcon.xaml
+            </summary>
+            <summary>
+            AlertPassIcon
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertPassIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AlertsLogDialog">
+            <summary>
+            Interaction logic for AlertsLogDialog.xaml
+            </summary>
+            <summary>
+            AlertsLogDialog
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertsLogDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AlertsLogViewer">
+            <summary>
+            Interaction logic for AlertsLogViewer.xaml
+            </summary>
+            <summary>
+            AlertsLogViewer
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertsLogViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AlertWarningIcon">
+            <summary>
+            Interaction logic for AlertWarningIcon.xaml
+            </summary>
+            <summary>
+            AlertWarningIcon
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AlertWarningIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AsyncAlertLog">
+            <summary>
+            An alert log which can raise alerts asynchronously using the UI dispatcher
+            to enable alerts to be updated during a process.
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.AsyncAlertLog.Window">
+            <summary>
+            The window whose dispatcher this alert log uses to invoke alert changes
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.BarChart">
+            <summary>
+            Interaction logic for BarChart.xaml
+            </summary>
+            <summary>
+            BarChart
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.BarChart.OnSourceDataCoerced(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Static callback function when data property changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.BarChart.OnSourceDataChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function when data property changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.BarChart.SourceDataProperty">
+            <summary>
+            Data dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.BarChart.SourceData">
+            <summary>
+            The data to display.  Should be a collection of NamedDataSets or derivative types
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.BarChart.BarBrushesProperty">
+            <summary>
+            Bar Brushes dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.BarChart.BarBrushes">
+            <summary>
+            The set of colours or brushes used to paint the bar segments.
+            The dictionary may contain WPF Brushes and Colors and Nucleus DisplayBrushes and Colours,
+            keyed by a string.
+            The dictionary may be automatically populated when required to display data keyed by
+            values not already included in the dictionary.
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.BarChart.ShadingProperty">
+            <summary>
+            Shading dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.BarChart.Shading">
+            <summary>
+            The strength of shading on the bars
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.BarChart.Refresh">
+            <summary>
+            Refresh and redraw the diagram
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.BarChart.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.ChartKey">
+            <summary>
+            Interaction logic for ChartKey.xaml
+            </summary>
+            <summary>
+            ChartKey
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.ChartKey.ItemsSourceProperty">
+            <summary>
+            Bar Brushes dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.ChartKey.ItemsSource">
+            <summary>
+            The set of colours or brushes used to paint the bar segments.
+            The dictionary may contain WPF Brushes and Colors and Nucleus DisplayBrushes and Colours,
+            keyed by a string.
+            The dictionary may be automatically populated when required to display data keyed by
+            values not already included in the dictionary.
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ChartKey.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.AllZeroVisibilityConverter">
+            <summary>
+            MultiValueConverter which will return Collapsed if any of the input values are
+            greater than zero, or Visible if none of them are.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.BarKeyedBrushConverter">
+            <summary>
+            Converter which returns a brush for barchart bar segments based on a string key.
+            This is implemented as a MultiValueConverter where the first value is the key and
+            the second is the dictionary
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.BooleanVisibilityConverter">
+            <summary>
+            Converter that returns Visibility.Visible for the boolean value true, else Visibility.Collapsed.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.BrushConverter">
+            <summary>
+            A converter class to convert Nucleus DisplayBrush objects to WPF form.
+            The parameter represents a limiting alpha value.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.ColourScaleConverter">
+            <summary>
+            A converter to interploate a numeric value to a solid colour brush on a gradient
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.CountVisibilityConverter">
+            <summary>
+            Converter class to determine visibility based on whether a collection is empty (or null).
+            Null or empty = collapsed, else visibile
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.DictionaryKeyedValueConverter">
+            <summary>
+            MultiValueConverter to allow binding to a value 
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.AreEqualConverter">
+            <summary>
+            Converter that returns true if all the values in the multibinding are the same
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.FadeOutConverter">
+            <summary>
+            Converter to determine control opacity
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.GraphPointsConverter">
+            <summary>
+            Convert a LinearIntervalGraph into a collection of points suitable for binding to a Polyline Points property.
+            If the parameter is set to boolean true then the keys will be used as the y coordinate, else it will be used as
+            the x coordinate.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IAutoUIHostableVisibilityConverter">
+            <summary>
+            Converter which returns Visibility.Visible if the value implements the
+            IAutoUIHostable interface, otherwise Visibility.Collapsed
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsEqualVisibilityConverter">
+            <summary>
+            Converter that tests whether the given value is equal to the parameter
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsTypeConverter">
+            <summary>
+            Converter that returns whether or not the value type is the same as the parameter
+            as a boolean
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsZeroConverter">
+            <summary>
+            A value converter which returns true if the input value is equal to 0, else false.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.MeshConverter">
+            <summary>
+            Convert between Nucleus Mesh geometry and WPF MeshGeometry3D
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.MillimetersConverter">
+            <summary>
+            Value converter to convert between distances stored in m but represented in mm
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Converters.MillimetersConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from m to mm
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.Converters.MillimetersConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from mm to m
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.MultiplicationConverter">
+            <summary>
+            Multi converter to return the multiplication of all input values
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.NumericIDConverter">
+            <summary>
+            Convert a ModelObject to and from its NumericID
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.ScalarConverter">
+            <summary>
+            Converter to multiply a double value by a second value
+            defined as a parameter of this converter
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.ScaleConverter">
+            <summary>
+            Value converter to scale a value by a multiplication factor specified as a parameter
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.TextConverter">
+            <summary>
+            Convert from Nucleus objects to text strings and back again.
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Converters.TextConverter.Model">
+            <summary>
+            The model with respect to which object numbers and names are referenced
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.UndeletedCountConverter">
+            <summary>
+            A MultiValueConverter used to determine the number of items in a collection which
+            are not marked as deleted
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.UpperCaseConverter">
+            <summary>
+            Converter to make text upper case
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.VisibilityConverter">
+            <summary>
+            A general-purpose converter for Visibility.
+            Returns Visible if the value is not null and is a boolean equal to true or
+            an integer greater than zero.
+            Else will return Collapsed.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.AlwaysVisibleConverter">
+            <summary>
+            A converter that always returns Visibility.Visible.  Can used in conjection with fallbackvalue when
+            binding to collapse controls when a property is not present on the viewmodel
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.AutoSpaceCamelCaseConverter">
+            <summary>
+            Converter to insert spaces to convert camelCase to camel Case
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.FlatStringConverter">
+            <summary>
+            Converter that takes a list of strings and converts them into a single flat string separated by newline
+            characters.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.InverseBoolConverter">
+            <summary>
+            Converter which will invert a boolean
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsNotNullConverter">
+            <summary>
+            Converter that returns true if a value is non-null, false if it is
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.NullOrEmptyVisibilityConverter">
+            <summary>
+            Converter class that returns Visibility.Collapsed if the input value is null or an empty string,
+            or else returns Visibility.Visible
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.UntitledConverter">
+            <summary>
+            Converter class that takes in a string and either returns the string itself or
+            'Untitled' if the string is null or empty
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.VisibleWhenEqualConverter">
+            <summary>
+            Converter that returns Visibility.Visible when the value is equal to the parameter, or
+            else returns Visbility.Collapsed
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.VisibleWhenNotEqualConverter">
+            <summary>
+            Converter that returns Visibility.Visible when the value is not equal to the parameter, or
+            else returns Visbility.Collapsed if it is
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsEqualConverter">
+            <summary>
+            Converter that returns whether or not the value is the same as the parameter
+            as a boolean
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Converters.IsNotEqualConverter">
+            <summary>
+            Converter that returns whether or not the value is not the same as the parameter
+            as a boolean
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.AutoUIDataGrid.GenerateSubTypeColumns">
+            <summary>
+            If set to true, columns will be generated for all detected sub-types
+            of the items source type as well as the base.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AutoUIDialog">
+            <summary>
+            Interaction logic for AutoUIDialog.xaml
+            </summary>
+            <summary>
+            AutoUIDialog
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIDialog.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Initialise a new AutoUIDialog with the specfied context object
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIDialog.#ctor(System.String,System.Object,System.Boolean)">
+            <summary>
+            Initialise a new AutoUIDialog with the specfied context object and title
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIDialog.Show(System.String,System.Object,System.Boolean)">
+            <summary>
+            Create and show an auto-generated options dialog for the specified
+            object.  Interface elements will be generated automatically for any AutoUI
+            tagged properties on the object
+            </summary>
+            <param name="title"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIWrapPanel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIWrapPanel.Initialise">
+            <summary>
+            Initialise this panel
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIWrapPanel.AutoPropertiesPanel_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the DataContext is changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIWrapPanel.Refresh">
+            <summary>
+            Refresh the fields displayed by this panel
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.AutoUIUniformGrid">
+            <summary>
+            A uniform grid that automatically populates itself for members of its datacontext
+            marked with an AutoUIAttribute
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIUniformGrid.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIUniformGrid.Initialise">
+            <summary>
+            Initialise this panel
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIUniformGrid.AutoPropertiesPanel_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the DataContext is changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIUniformGrid.Refresh">
+            <summary>
+            Refresh the fields displayed by this panel
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.BindingGrouplessDataGrid">
+            <summary>
+            A datagrid that does not use binding groups - source changes will be made immediately rather than when the
+            user leaves the row
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.BindingGrouplessDataGrid.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Override to clear binding groups from this grid when something is changed
+            </summary>
+            <param name="availableSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.BindingGrouplessDataGrid.ClearBindingGroups">
+            <summary>
+            Clear the binding groups from all rows
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.ErrorIcon">
+            <summary>
+            Interaction logic for ErrorIcon.xaml
+            </summary>
+            <summary>
+            ErrorIcon
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ErrorIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Extensions.AutoUIComboBoxAttributeExtensions">
+            <summary>
+            Extension methods for AutoUIComboBoxAttribute objects
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Extensions.AutoUIComboBoxAttributeExtensions.GetCombinedSourceCollection(Nucleus.UI.AutoUIComboBoxAttribute,System.Object)">
+            <summary>
+            Get the compositecollection detailing the full set of available source items
+            specified by this attribute
+            </summary>
+            <param name="cBA"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.DependencyObjectExtensions.FindByUid(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Get a child UIElement by its Uid
+            </summary>
+            <param name="parent"></param>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.DependencyObjectExtensions.FindByType``1(System.Windows.DependencyObject)">
+            <summary>
+            Get a child UIElement by its Uid
+            </summary>
+            <param name="parent"></param>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.EnumBindingSourceExtension">
+            <summary>
+            A markup extension to retrieve enum values.
+            Based on http://brianlagunas.com/a-better-way-to-data-bind-enums-in-wpf/
+            Use example:
+            ItemsSource="{Binding Source={fb:EnumBindingSource {x:Type [ !!ENUM TYPE!! ]}} }"
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.EnumBindingSourceExtension._EnumType">
+            <summary>
+            Private backing field for EnumType property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.EnumBindingSourceExtension.EnumType">
+            <summary>
+            The type of enum to extract the values for
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.EnumBindingSourceExtension.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.EnumBindingSourceExtension.#ctor(System.Type)">
+            <summary>
+            Initialises an EnumBindingSourceExtension with the specified enum type
+            </summary>
+            <param name="enumType"></param>
+        </member>
+        <member name="T:Nucleus.WPF.ToWPF">
+            <summary>
+            Helper class of static functions to convert Nucleus objects to WPF shapes
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Vector)">
+            <summary>
+            Convert a Nucleus vector to a WPF point
+            </summary>
+            <param name="pt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Vertex)">
+            <summary>
+            Convert a Nucleus vertex to a WPF Point3D
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.Colour,System.Byte)">
+            <summary>
+            Convert a Nucleus colour to a WPF color
+            </summary>
+            <param name="col">The colour to be converterd</param>
+            <param name="alphaLimit">Optional.  The maximum value to which to limit the alpha channel of the colour.
+            Use this to specify that the colour should be displayed as semitransparent even if the original to be converted
+            was not.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.Rectangle)">
+            <summary>
+            Convert a Nucleus Rectangle to a WPF Rect
+            </summary>
+            <param name="rectangle"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.ColourBrush,System.Byte)" -->
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.ITexture)">
+            <summary>
+            Convert a Nucleus ITexture to an equivalent ImageSource
+            </summary>
+            <param name="texture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.TextureBrush)">
+            <summary>
+            Convert a Nucleus TextureBrush to a WPF ImageBrush
+            </summary>
+            <param name="brush"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Nucleus.WPF.ToWPF.Convert(Nucleus.Rendering.DisplayBrush,System.Byte)" -->
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Base.PathBinding)">
+            <summary>
+            Convert a Nucleus binding to a WPF one
+            </summary>
+            <param name="binding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.ConvertToLine(Nucleus.Geometry.Line)">
+            <summary>
+            Convert a Nucleus line to a WPF one
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Line)">
+            <summary>
+            Convert a Nucleus line to a WPF PathFigure
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Arc)">
+            <summary>
+            Convert a Nucleus arc into a WPF PathFigure
+            </summary>
+            <param name="arc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.PolyLine)">
+            <summary>
+            Convert a Nucleus PolyLine into a WPF PathFigure
+            </summary>
+            <param name="polyLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.PolyCurve)">
+            <summary>
+            Convert a Nucleus PolyCurve into a WPF PathFigure
+            </summary>
+            <param name="polyCurve"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Curve)">
+            <summary>
+            Convert a Nucleus curve to a WPF PathFigure
+            </summary>
+            <param name="curve"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.ToWPF.Convert(Nucleus.Geometry.Mesh)">
+            <summary>
+            Convert a Nucleus mesh to a WPF MeshGeometry3D
+            </summary>
+            <param name="mesh"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.Bool6DFieldControl">
+            <summary>
+            Interaction logic for Bool6DFieldControl.xaml
+            </summary>
+            <summary>
+            Bool6DFieldControl
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldControl.PropertyChanged">
+            <summary>
+            Event raised when a property of this object is changed
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldControl.NotifyPropertyChanged(System.String)">
+            <summary>
+            Raise a PropertyChanged event for the specified property name
+            </summary>
+            <param name="propertyName">The name of the property</param>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.X">
+            <summary>
+            Boolean X component
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.Y">
+            <summary>
+            Boolean Y component
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.Z">
+            <summary>
+            Boolean Z component
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.XX">
+            <summary>
+            Boolean XX component
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.YY">
+            <summary>
+            Boolean YY component
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldControl.ZZ">
+            <summary>
+            Boolean ZZ component
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Bool6DFieldsControl">
+            <summary>
+            Interaction logic for Bool6DFieldsControl.xaml
+            </summary>
+            <summary>
+            Bool6DFieldsControl
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.XValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.XValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.XValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.YValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.YValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.YValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.ZValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.ZValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.ZValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.XXValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseXXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnXXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.XXValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.XXValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.YYValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseYYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnYYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.YYValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.YYValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.Bool6DFieldsControl.ZZValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.RaiseZZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.OnZZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Bool6DFieldsControl.ZZValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Bool6DFieldsControl.ZZValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Bool6DFieldsControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.CheckBoxFieldControl">
+            <summary>
+            Interaction logic for CheckBoxFieldControl.xaml
+            </summary>
+            <summary>
+            CheckBoxFieldControl
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.CheckBoxFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.ComboFieldControl">
+            <summary>
+            Interaction logic for ComboFieldControl.xaml
+            </summary>
+            <summary>
+            ComboFieldControl
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ComboFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.FieldControl">
+            <summary>
+            Base class for controls used to represent data fields
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.FieldControl.ValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.FieldControl.RaiseValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.FieldControl.OnValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.FieldControl.ValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.FieldControl.Value">
+            <summary>
+            The value displayed in the field
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.FieldControl.OnValueChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Overridable member function called when the value of the control is changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.FieldControl.AdaptTo(System.Reflection.PropertyInfo)">
+            <summary>
+            Set up this control to display the specified object property
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="P:Nucleus.WPF.IntSliderFieldControl.ValueType">
+            <summary>
+            The type of the control's value
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.IntSliderFieldControl.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Minimum, maximum constructor
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+        </member>
+        <member name="M:Nucleus.WPF.IntSliderFieldControl.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Minimum, maximum, tick frequency constructor
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+            <param name="tickFrequency"></param>
+        </member>
+        <member name="T:Nucleus.WPF.LabelledControl">
+            <summary>
+            Base class for user controls with a label dependency property
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LabelledControl.LabelProperty">
+            <summary>
+            Label dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LabelledControl.Label">
+            <summary>
+            The label text of the field
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LabelledControl.ExtraContentProperty">
+            <summary>
+            Extra content dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LabelledControl.ExtraContent">
+            <summary>
+            Extra content hosted as part of the field
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LabelledControl.UnitsProperty">
+            <summary>
+            Units dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LabelledControl.Units">
+            <summary>
+            The units the displayed quantity is in
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.LabelledControl.AdaptTo(System.Reflection.PropertyInfo)">
+            <summary>
+            Set up this control to display the specified object property
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="T:Nucleus.WPF.AutoUIStackPanel">
+            <summary>
+            A stack panel that automatically generates a UI interface for members of its
+            datacontext marked with an AutoUI attribute
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIStackPanel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIStackPanel.Initialise">
+            <summary>
+            Initialise this panel
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIStackPanel.AutoPropertiesPanel_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the DataContext is changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.AutoUIStackPanel.Refresh">
+            <summary>
+            Refresh the fields displayed by this panel
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.SetFieldControl">
+            <summary>
+            Interaction logic for SetFieldControl.xaml
+            </summary>
+            <summary>
+            SetFieldControl
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SetFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.Sprite">
+            <summary>
+            A WPF control which represents an animated 2D Sprite
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.Sprite.OnAnimationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the value of a visually-important sprite dependency property is changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.Sprite.OnVisualChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the value of a visually-important sprite dependency property is changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.Sprite.AnimationProperty">
+            <summary>
+            Animation name Dependency Property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Sprite.Animation">
+            <summary>
+            The name of the current animation
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.Sprite.AnimationProgressProperty">
+            <summary>
+            Animation progress dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Sprite.AnimationProgress">
+            <summary>
+            The progress of the current animation
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.Sprite.OrientationProperty">
+            <summary>
+            Orientaion Dependency Property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Sprite.Orientation">
+            <summary>
+            The orientation of the sprite.
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.Sprite._SpriteData">
+            <summary>
+            Private backing member variable for the SpriteData property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.Sprite.SpriteData">
+            <summary>
+            The sprite data which defines the animations of this Sprite
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.TextComboDialog">
+            <summary>
+            Interaction logic for TextComboDialog.xaml
+            </summary>
+            <summary>
+            TextComboDialog
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.TextComboDialog._Text">
+            <summary>
+            Private backing field for Text property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.TextComboDialog.Text">
+            <summary>
+            The text entered into the dialog
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.TextComboDialog._Suggestions">
+            <summary>
+            Private backing field for Suggestions property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.TextComboDialog.Suggestions">
+            <summary>
+            The suggested text values that the user can select via the combobox
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.TextComboDialog.Show(System.String,System.String@,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Show a TextComboDialog
+            </summary>
+            <param name="title"></param>
+            <param name="text"></param>
+            <param name="suggestions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.TextComboDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.XtoZZControl">
+            <summary>
+            Interaction logic for XtoZZControl.xaml
+            </summary>
+            <summary>
+            XtoZZControl
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.XValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.XValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.XValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.YValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.YValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.YValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.ZValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.ZValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.ZValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.XXValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseXXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnXXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.XXValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.XXValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.YYValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseYYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnYYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.YYValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.YYValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XtoZZControl.ZZValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.RaiseZZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.OnZZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XtoZZControl.ZZValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XtoZZControl.ZZValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XtoZZControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.XYZControl">
+            <summary>
+            Interaction logic for XYZControl.xaml
+            </summary>
+            <summary>
+            XYZControl
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XYZControl.XValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.RaiseXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.OnXValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XYZControl.XValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XYZControl.XValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XYZControl.YValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.RaiseYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.OnYValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XYZControl.YValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XYZControl.YValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.XYZControl.ZValueChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.RaiseZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.OnZValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ValueChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.XYZControl.ZValueProperty">
+            <summary>
+            Value dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.XYZControl.ZValue">
+            <summary>
+            The value displayed in the textbox and slider
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.XYZControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.GeometryCanvas.GeometryChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.RaiseGeometryChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.OnGeometryChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ProfilesChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.GeometryCanvas.GeometryProperty">
+            <summary>
+            Profiles dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.GeometryCanvas.Geometry">
+            <summary>
+            The profiles to be displayed on this canvas
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.RegisterGeometry">
+            <summary>
+            Regiter the new value of the geometry for collection change monitoring
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.GeometryCanvas.CurveThickness">
+            <summary>
+            The default stroke thickness of curves drawn on this canvas
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.GeometryCanvas.DefaultBrushProperty">
+            <summary>
+            Default Brush dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.GeometryCanvas.DefaultBrush">
+            <summary>
+            The default brush used to draw objects on this canvas
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.GeometryCanvas.PointDiameter">
+            <summary>
+            The default diameter of points drawn on this canvas
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.GeometryCanvas.FillBrush">
+            <summary>
+            The default brush used to fill closed regions
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.Geometry_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Event handler for CollectionChanged events on the bound Geometry collection
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.AddContents(Nucleus.Geometry.VertexGeometry)">
+            <summary>
+            Add geometric contents to the canvas, automatically converting from 
+            Nucleus geometry to the WPF equivalent
+            </summary>
+            <param name="shape"></param>
+        </member>
+        <member name="M:Nucleus.WPF.GeometryCanvas.RefreshContents">
+            <summary>
+            Regenerate the contents of this canvas based on the bound
+            Geometry collection.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.InvokeMethodCommand">
+            <summary>
+            Command to invoke delegate methods on other objects
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.InvokeMethodCommand.CanExecuteChanged">
+            <summary>
+            Event raised when the value returned by the CanExecute delegate is changed
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.InvokeMethodCommand._Execute">
+            <summary>
+            The action delegate to be invoked when this command is executed
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.InvokeMethodCommand._CanExecute">
+            <summary>
+            A predicate delegate to be invoked to check whether this command can be executed
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.InvokeMethodCommand.#ctor(System.Action,System.Predicate{System.Object})">
+            <summary>
+            Create a new command
+            </summary>
+            <param name="execute">The method to be executed</param>
+            <param name="canExecute">Optional.  A method which returns true or false depending on whether the method may be executed</param>
+        </member>
+        <member name="M:Nucleus.WPF.InvokeMethodCommand.#ctor(System.Object,System.Reflection.MethodInfo,System.Reflection.MethodInfo)">
+            <summary>
+            Create a new command from reflection information
+            </summary>
+            <param name="target"></param>
+            <param name="execute"></param>
+            <param name="canExecute"></param>
+        </member>
+        <member name="T:Nucleus.WPF.LayeredGeometryCanvas">
+            <summary>
+            Interaction logic for LayeredGeometryCanvas.xaml
+            </summary>
+            <summary>
+            LayeredGeometryCanvas
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.LayeredGeometryCanvas.LayersChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.LayeredGeometryCanvas.RaiseLayersChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.LayeredGeometryCanvas.OnLayersChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ProfilesChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.LayeredGeometryCanvas.LayersProperty">
+            <summary>
+            Profiles dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LayeredGeometryCanvas.Layers">
+            <summary>
+            The profiles to be displayed on this canvas
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LayeredGeometryCanvas.OverlayProperty">
+            <summary>
+            Overlay geometry dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LayeredGeometryCanvas.Overlay">
+            <summary>
+            Overlay geometry property
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LayeredGeometryCanvas.CurveThicknessProperty">
+            <summary>
+            Curve thickness dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LayeredGeometryCanvas.CurveThickness">
+            <summary>
+            The default stroke thickness of curves drawn on this canvas
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LayeredGeometryCanvas.ViewBounds">
+            <summary>
+            The bounds within which geometry should be drawn on this canvas
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LayeredGeometryCanvas.CursorPosition">
+            <summary>
+            The current cursor position on the canvas, in model coordinates
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LayeredGeometryCanvas._hTR">
+            <summary>
+            Hit test result object used when checking which geometry this 
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.LayeredGeometryCanvas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.IsNullDataTemplateSelector">
+            <summary>
+            A DataTemplateSelector which bases the data template to be used on whether
+            or not an item is null
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.IsNullDataTemplateSelector.NotNullTemplate">
+            <summary>
+            The DataTemplate to use when the value is not null
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.IsNullDataTemplateSelector.NullTemplate">
+            <summary>
+            The DataTemplate to use when the value is null
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.IsNullDataTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            SelectTemplate override
+            </summary>
+            <param name="item"></param>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.LineGraphCanvas">
+            <summary>
+            A custom canvas that is used for drawing line graphs
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.LineGraphCanvas.OnDataChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function when data property changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.LineGraphCanvas.DataProperty">
+            <summary>
+            Data dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.Data">
+            <summary>
+            The data to display
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LineGraphCanvas.XAxisLabelsProperty">
+            <summary>
+            XAxisLabels dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.XAxisLabels">
+            <summary>
+            A set of labels to display along the X-Axis.
+            If not populated these will be automatically generated.
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LineGraphCanvas.YAxisLabelsProperty">
+            <summary>
+            YAxisLabels dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.YAxisLabels">
+            <summary>
+            A set of labels to display along the Y-Axis.
+            If not populated these will be automatically generated.
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LineGraphCanvas.XAxisLabelSuffixProperty">
+            <summary>
+            X-axis Label Suffix Dependency Property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.XAxisLabelSuffix">
+            <summary>
+            The suffix to be applied to auto-generated labels on the X-Axis
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.LineGraphCanvas.YAxisLabelSuffixProperty">
+            <summary>
+            X-axis Label Suffix Dependency Property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.YAxisLabelSuffix">
+            <summary>
+            The suffix to be applied to auto-generated labels on the X-Axis
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.FlipXY">
+            <summary>
+            If true, the keys will be used for Y and the values for X,
+            else the other way around.
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.LineGraphCanvas.GridDivisions">
+            <summary>
+            The target number of grid divisions when auto-generating gridlines.
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.LineGraphCanvas.ToPoint(System.Double,System.Double,Nucleus.Maths.Interval,Nucleus.Maths.Interval)">
+            <summary>
+            Create a point based on the specified key and value variables,
+            mapped to the current graph space.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="xFactor"></param>
+            <param name="yFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.LineGraphCanvas.GenerateAxisLabels(Nucleus.Maths.Interval,System.String)">
+            <summary>
+            Generate a set of labels to be displayed in the absense of any preset values
+            </summary>
+            <param name="range"></param>
+            <param name="suffix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.LineGraphCanvas.Refresh">
+            <summary>
+            Refresh the graph contents
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.MessageDialog">
+            <summary>
+            Interaction logic for MessageDialog.xaml
+            </summary>
+            <summary>
+            MessageDialog
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.MessageDialog.ReturnValue">
+            <summary>
+            The value to be returned when this dialog closes
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.MessageDialog.DoNotShowAgain">
+            <summary>
+            The value of the 'Do not show this message again' checkbox
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.#ctor(System.String,System.String[])">
+            <summary>
+            Initialise a new MessageDialog with the specified title displaying the specified messages
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.#ctor(System.String,System.Boolean,System.String[])">
+            <summary>
+            Initialise a new MessageDialog with the specified title displaying the specified messages
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.#ctor(System.String,System.String,Nucleus.UI.UIOption[])">
+            <summary>
+            Initialise a new MessageDialog with the specified title displaying the specified message
+            and offering the specified set of options
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.#ctor(System.String,System.Exception,System.String)">
+            <summary>
+            Initialise a new MessageDialog with the specified title displaying data for the specified exception
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.Show(System.String,System.String[])">
+            <summary>
+            Show a new MessageDialog window
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.Show(System.String,System.Boolean@,System.String[])">
+            <summary>
+            Show a new MessageDialog window including a 'Do Not Show This Message Again' checkbox
+            </summary>
+            <param name="title"></param>
+            <param name="dontShowAgain">A boolean value that can be used to output 'true' when the
+            same message should not be shown again.</param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.Show(System.String,System.Exception,System.String)">
+            <summary>
+            Show a new MessageDialog exception window
+            </summary>
+            <param name="title"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.ShowOptions(System.String,System.String,Nucleus.UI.UIOption[])">
+            <summary>
+            Show a new MessageDialog window offering the specified set of options.
+            Returns the ReturnValue of the selected option (if any).
+            </summary>
+            <param name="title"></param>
+            <param name="message"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.MessageDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.MultiSelectListBox">
+            <summary>
+            A list box with (two-way) bindable Selected items
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.MultiSelectListBox._LockSelectionUpdates">
+            <summary>
+            Flag that is used to prevent infinite back-and-forth between SelectedItems
+            and the bound Selection's modification events
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.MultiSelectListBox.Selection">
+            <summary>
+            The currently selected items.
+            Essentially replicates SelectedItems, but with two-way binding.
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.ProfileCanvas">
+            <summary>
+            A canvas which is used to draw a preview of a section property
+            </summary>
+        </member>
+        <member name="E:Nucleus.WPF.ProfileCanvas.ProfilesChanged">
+            <summary>
+            ValueChanged event
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ProfileCanvas.RaiseProfilesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raise a ValueChanged event on this control
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.ProfileCanvas.OnProfilesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function to raise a ProfilesChanged event
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.ProfileCanvas.ProfilesProperty">
+            <summary>
+            Profiles dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.ProfileCanvas.Profiles">
+            <summary>
+            The profiles to be displayed on this canvas
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ProfileCanvas.RefreshContents">
+            <summary>
+            Recreate the displayed geometry inside this canvas
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.PropertiesExpander">
+            <summary>
+            Interaction logic for SidebarExpanderControl.xaml
+            </summary>
+            <summary>
+            PropertiesExpander
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.PropertiesExpander.HeaderIconProperty">
+            <summary>
+            Header Icon Dependency Family
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.PropertiesExpander.HeaderIcon">
+            <summary>
+            The image source to be used as an icon in the header of this control
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.PropertiesExpander.HeaderContentProperty">
+            <summary>
+            Content hosted in the header of the control dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.PropertiesExpander.HeaderContent">
+            <summary>
+            Content hosted in the header of the control
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.PropertiesExpander.BodyContentProperty">
+            <summary>
+            Content hosted in the expandable portion of the control dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.PropertiesExpander.BodyContent">
+            <summary>
+            Content hosted in the expandable portion of the control
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.PropertiesExpander.IsExpandedProperty">
+            <summary>
+            IsExpanded dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.PropertiesExpander.IsExpanded">
+            <summary>
+            Is the Expander Expanded?
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.PropertiesExpander.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.SliderFieldControl">
+            <summary>
+            Interaction logic for SliderFieldControl.xaml
+            </summary>
+            <summary>
+            SliderFieldControl
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SliderFieldControl.MinimumProperty">
+            <summary>
+            Minumum dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.Minimum">
+            <summary>
+            The minimum value of the slider
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SliderFieldControl.MaximumProperty">
+            <summary>
+            Maximum dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.Maximum">
+            <summary>
+            The maximum value of the slider
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SliderFieldControl.TickFrequencyProperty">
+            <summary>
+            Tick frequency dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.TickFrequency">
+            <summary>
+            The slider tick frequency
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SliderFieldControl.IsSnapToTickEnabledProperty">
+            <summary>
+            IsSnapToTickEnabled dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.IsSnapToTickEnabled">
+            <summary>
+            Should the slider snap to the nearest tick?
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SliderFieldControl.TickPlacementProperty">
+            <summary>
+            Tick placement dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.TickPlacement">
+            <summary>
+            Slider tick placement
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SliderFieldControl.ValueType">
+            <summary>
+            The type of the control's value
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SliderFieldControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SliderFieldControl.#ctor(System.Double,System.Double)">
+            <summary>
+            Minimum, maximum constructor
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+        </member>
+        <member name="M:Nucleus.WPF.SliderFieldControl.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Minimum, maximum, tick frequency constructor
+            </summary>
+            <param name="minimum"></param>
+            <param name="maximum"></param>
+            <param name="tickFrequency"></param>
+        </member>
+        <member name="M:Nucleus.WPF.SliderFieldControl.AdaptTo(System.Reflection.PropertyInfo)">
+            <summary>
+            Set up this control to display the specified object property
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:Nucleus.WPF.SliderFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.RotatableViewport3D">
+            <summary>
+            An extended Viewport3D that can be rotated via mouse interaction with a separate
+            trackpad object (such as a transparent border over the viewport)
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.RotatableViewport3D.TrackPad">
+            <summary>
+            The FrameworkElement the mouse events of which will be tracked and used to control
+            the camera
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.RotatableViewport3D.FocalPoint">
+            <summary>
+            The point on which the camera is focussed
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.RotatableViewport3D.CameraTransform">
+            <summary>
+            The transformation which is to be applied to the camera.
+            Bind the transform of the viewport camera to this property.
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.RotatableViewport3D.ScreenTo3D(System.Windows.Point)">
+            <summary>
+            Transform screen coodinates to spherical 3D coordinates
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.SelectItemsDialog">
+            <summary>
+            Interaction logic for SelectItemsDialog.xaml
+            </summary>
+            <summary>
+            SelectItemsDialog
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SelectItemsDialog.ItemsSourceProperty">
+            <summary>
+            ItemsSource dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SelectItemsDialog.ItemsSource">
+            <summary>
+            The source of the items that can be selected from
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SelectItemsDialog.SelectionMode">
+            <summary>
+            The selection mode of the dialog
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SelectItemsDialog.SelectedItems">
+            <summary>
+            The items selected in the dialog
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SelectItemsDialog.SelectedItem">
+            <summary>
+            The item selected in the dialog
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SelectItemsDialog.SelectItem``1(System.String,System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Use a SelectItemsDialog to choose a single item from the specified collection
+            </summary>
+            <typeparam name="TItem">The type of the item to choose</typeparam>
+            <param name="caption"></param>
+            <param name="items"></param>
+            <returns>The selected item if one is chosen and the dialog is not cancelled, else null</returns>
+        </member>
+        <member name="M:Nucleus.WPF.SelectItemsDialog.SelectItems``1(System.String,``0)">
+            <summary>
+            Use a SelectItemsDialog to choose a subset of items from the specified collection
+            </summary>
+            <typeparam name="TCollection"></typeparam>
+            <param name="caption"></param>
+            <param name="sourceItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.WPF.SelectItemsDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.SnapBorder">
+            <summary>
+            Border which automatically snaps it's width to the nearest number of a preset increment
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SnapBorder.WidthStep">
+            <summary>
+            The width snapping increment
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.TextFieldControl">
+            <summary>
+            Interaction logic for TextFieldControl.xaml
+            </summary>
+            <summary>
+            TextFieldControl
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.TextFieldControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.TextFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.VectorFieldControl">
+            <summary>
+            Interaction logic for VectorFieldControl.xaml
+            </summary>
+            <summary>
+            VectorFieldControl
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.VectorFieldControl.XValue">
+            <summary>
+            The X-component value
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.VectorFieldControl.YValue">
+            <summary>
+            The X-component value
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.VectorFieldControl.ZValue">
+            <summary>
+            The X-component value
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.VectorFieldControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.SpiderDiagram">
+            <summary>
+            Interaction logic for SpiderDiagram.xaml
+            </summary>
+            <summary>
+            SpiderDiagram
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SpiderDiagram.OnSourceDataCoerced(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Static callback function when data property changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nucleus.WPF.SpiderDiagram.OnSourceDataChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static callback function when data property changed
+            </summary>
+            <param name="d"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Nucleus.WPF.SpiderDiagram.SourceDataProperty">
+            <summary>
+            Data dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.SourceData">
+            <summary>
+            The data to display.  Should be a collection of NamedDataSets or derivative types
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.AxisRanges">
+            <summary>
+            The range of values on each axis.  Determines scaling of the plot polygon.
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.MinimumAxisRange">
+            <summary>
+            The minimum range on each axis
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.FillOpacity">
+            <summary>
+            The opacity of the spider diagram fill gradient
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.LabelFontSize">
+            <summary>
+            The size of the font used to display axis labels
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SpiderDiagram.ColourBrightnessCap">
+            <summary>
+            The maximum permissible brightness value for line colours.
+            Dataset display colours which exceed this brightness will be
+            automatically adjusted to help them to stand out against the
+            white background.
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SpiderDiagram.Refresh">
+            <summary>
+            Refresh and redraw the diagram
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SpiderDiagram.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.SubTypeBindingSourceExtension._Type">
+            <summary>
+            Private backing field for the Type property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.SubTypeBindingSourceExtension.Type">
+            <summary>
+            The type to get subtypes for
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SubTypeBindingSourceExtension.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.SubTypeBindingSourceExtension.#ctor(System.Type)">
+            <summary>
+            Initialises a new SubTypeBindingSourceExtension with the specified type
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:Nucleus.WPF.UIElementCollectionExtensions">
+            <summary>
+            Extension methods for UIElementCollection
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.UIElementCollectionExtensions.GenerateControlsFor(System.Windows.Controls.UIElementCollection,System.Object)">
+            <summary>
+            Populate this UIElementCollection with automatically generated controls for the specified type.
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:Nucleus.WPF.UIElementCollectionExtensions.GenerateControlsFor(System.Windows.Controls.UIElementCollection,System.Object,System.Collections.Generic.IList{System.Reflection.MemberInfo})">
+            <summary>
+            Populate this UIElementCollection with automatically generated controls for the specified list of members.
+            Annotate the properties with the AutoUIAttribute to control how this is done.
+            </summary>
+            <param name="members"></param>
+        </member>
+        <member name="T:Nucleus.WPF.VerticalViewbox">
+            <summary>
+            A custom Viewbox that will only scale the vertical component of a control
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.ViewScroller">
+            <summary>
+            Interaction logic for ViewScroller.xaml
+            </summary>
+            <summary>
+            ViewScroller
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.ViewScroller._DragScrolling">
+            <summary>
+            Drag scrolling toggle
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.ViewScroller._DragScrollPoint">
+            <summary>
+            The starting drag-scrolling point
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.ViewScroller.ZoomLevelProperty">
+            <summary>
+            ZoomLevel dependency property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.ViewScroller.ZoomLevel">
+            <summary>
+            Gets or sets the zoom level of this view scroller
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.ViewScroller.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Nucleus.WPF.VisualExtensions">
+            <summary>
+            Extension methods for WPF Visual objects
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.VisualExtensions.SaveAsPNG(System.Windows.Media.Visual,Nucleus.Base.FilePath,System.Int32)">
+            <summary>
+            Render and save the current visual appearance of this object to a .png file
+            </summary>
+            <param name="visual"></param>
+            <param name="filePath">The filepath to save the .png file to</param>
+            <param name="dpi">The Dots Per Inch quality rating for the output image</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.FromWPF">
+            <summary>
+            Static conversion class to translate WPF objects into Nucleus ones
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.FromWPF.Convert(System.Windows.Point)">
+            <summary>
+            Convert a WPF point to a Nucleus Vector
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.WPF.WPFTexture">
+            <summary>
+            A class which wraps a WPF ImageSource as a Nucleus ITexture
+            </summary>
+        </member>
+        <member name="F:Nucleus.WPF.WPFTexture._ImageSource">
+            <summary>
+            Private backing member variable for the ImageSource property
+            </summary>
+        </member>
+        <member name="P:Nucleus.WPF.WPFTexture.ImageSource">
+            <summary>
+            The texture ImageSource
+            </summary>
+        </member>
+        <member name="M:Nucleus.WPF.WPFTexture.#ctor(System.Windows.Media.ImageSource)">
+            <summary>
+            Construct a WPFTexture to wrap an ImageSource
+            </summary>
+            <param name="imageSource"></param>
+        </member>
+        <member name="M:Nucleus.Extensions.StringExtensions.ToParagraph(System.String)">
+            <summary>
+            Convert this string to a document paragraph with automatic
+            hyperlinks formed around any valid URL.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

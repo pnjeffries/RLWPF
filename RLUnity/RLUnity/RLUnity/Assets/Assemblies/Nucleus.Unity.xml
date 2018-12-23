@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nucleus.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:Nucleus.Unity.BindingBase">
+            <summary>
+            Base class for data binding scripts
+            </summary>
+        </member>
+        <member name="F:Nucleus.Unity.BindingBase.Path">
+            <summary>
+            The path of the property to be bound to
+            </summary>
+        </member>
+        <member name="F:Nucleus.Unity.BindingBase.StringFormat">
+            <summary>
+            The format of the binding for text binding
+            </summary>
+        </member>
+        <member name="P:Nucleus.Unity.BindingBase.Binding">
+            <summary>
+            Get the data binding
+            </summary>
+        </member>
+        <member name="P:Nucleus.Unity.BindingBase.DataContext">
+            <summary>
+            The data context of the binding - the object that
+            the source data is drawn from.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.BindingBase.InitialiseBinding">
+            <summary>
+            Perform initialisation of the binding
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.BindingBase.RefreshUI">
+            <summary>
+            Refresh the visual representation of the data
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.BindingBase.IsLocked">
+            <summary>
+            Is the UI currently locked for editing?
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.BindingBase.BindingUpdates">
+            <summary>
+            Process necessary updates due to binding changes
+            </summary>
+        </member>
+        <member name="T:Nucleus.Unity.BindingBaseExtensions">
+            <summary>
+            Extension methods for and to deal with Binding components
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.BindingBaseExtensions.SetDataContext(UnityEngine.GameObject,System.Object)">
+            <summary>
+            Set the data context of 
+            </summary>
+            <param name="obj"></param>
+            <param name="dataContext"></param>
+        </member>
+        <member name="T:Nucleus.Unity.NucleusVectorExtensions">
+            <summary>
+            Extension methods for Nucleus Vectors
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.NucleusVectorExtensions.ToUnityVector3(Nucleus.Geometry.Vector)">
+            <summary>
+            Convert this Nucleus Vector to a 3D Unity equivalent
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+            <remarks>Shortcut to ToUnity.Convert</remarks>
+        </member>
+        <member name="M:Nucleus.Unity.NucleusVectorExtensions.ToUnityVector2(Nucleus.Geometry.Vector)">
+            <summary>
+            Convert this Nucleus Vector to a 2D Unity equivalent
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.Extensions.UnityVector3Extensions">
+            <summary>
+            Extension methods for Unity's Vector3
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.Extensions.UnityVector3Extensions.ToNucleusVector(UnityEngine.Vector3)">
+            <summary>
+            Convert this Vector3 to an equivalent Nucleus Vector.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+            <remarks>
+            Shortcut to FromUnity.Convert
+            </remarks>
+        </member>
+        <member name="T:Nucleus.Unity.FromUnity">
+            <summary>
+            Conversion helper class to convert Unity native format geometry
+            types into their .Nucleus equivalent
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.FromUnity.Convert(UnityEngine.Vector3)">
+            <summary>
+            Convert a 3D Unity Vector to a .Nucleus one
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.FromUnity.Convert(UnityEngine.Vector2)">
+            <summary>
+            Convert a 2D Unity Vector to a .Nucleus one
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.FromUnity.Convert(UnityEngine.Bounds)">
+            <summary>
+            Convert a Unity bounding box to a .Nucleus one
+            </summary>
+            <param name="bounds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.FromUnity.Convert(UnityEngine.Color)">
+            <summary>
+            Convert a Unity Color to a .Nucleus Colour
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.ToUnity">
+            <summary>
+            Static helper conversion class to convert Nucleus geometry
+            to native Unity equivalents.
+            Note that by convention in .Nucleus the Z-axis is vertical while
+            in Unity it is the Y-axis.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert(Nucleus.Geometry.Vector)">
+            <summary>
+            Convert a .Nucleus vector to a 3D Unity equivalent
+            </summary>
+            <param name="v">The .Nucleus vector to convert</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert(Nucleus.Geometry.Vector[],System.Boolean)">
+            <summary>
+            Convert an array of .Nucleus vectors to a 3D Unity equivalent
+            </summary>
+            <param name="vs">The array of .Nucleus vectors to convert</param>
+            <param name="close">If true, the first point will be repeated at the end of the list</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert2D(Nucleus.Geometry.Vector)">
+            <summary>
+            Convert a .Nucleus vector to a 2D Unity equivalent
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert(Nucleus.Geometry.BoundingBox)">
+            <summary>
+            Convert a .Nucleus bounding box to a Unity one
+            </summary>
+            <param name="bBox"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert(Nucleus.Rendering.Colour)">
+            <summary>
+            Convert a .Nucleus colour to a Unity color
+            </summary>
+            <param name="colour"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert32(Nucleus.Rendering.Colour)">
+            <summary>
+            Convert a .Nucleus colour to a Unity color32
+            </summary>
+            <param name="colour"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Unity.ToUnity.Convert(Nucleus.Geometry.Axis)">
+            <summary>
+            Convert a .Nucleus axis to a Unity ray
+            </summary>
+            <param name="axis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.UnityMeshBuilder">
+            <summary>
+            Mesh builder class to create Unity meshes
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.#ctor">
+            <summary>
+            Creates a new UnityMeshBuilder
+            </summary>
+        </member>
+        <member name="F:Nucleus.Unity.UnityMeshBuilder._Vertices">
+            <summary>
+            Temporary vertex collection
+            </summary>
+        </member>
+        <member name="F:Nucleus.Unity.UnityMeshBuilder._Triangles">
+            <summary>
+            Temporary triangle indices collection
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.AddFace(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Add a new tri face to the mesh.
+            By default, the winding order is counter-clockwise.
+            </summary>
+            <param name="v1">The first vertex index</param>
+            <param name="v2">The second vertex index</param>
+            <param name="v3">The third vertex index</param>
+            <returns>The new face index</returns>
+            <remarks>
+            As the Unity convention for face normals is 
+            clockwise rather than counter-clockwise winding, 
+            the order of the vertices is changed to produce
+            the same face normal.
+            </remarks>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.AddFace(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Add a new quad face to the mesh.
+            By default, the winding order is counter-clockwise.
+            Unity meshes do not support quads so instead this will
+            be resolved as two triangles.
+            </summary>
+            <param name="v1">The first vertex index</param>
+            <param name="v2">The second vertex index</param>
+            <param name="v3">The third vertex index</param>
+            <param name="v4">The fourth vertex index</param>
+            <returns>The new face index</returns>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.AddVertex(Nucleus.Geometry.Vector)">
+            <summary>
+            Add a new vertex to the mesh
+            </summary>
+            <param name="pt"></param>
+            <returns>The new vertex index</returns>
+            <remarks>The returned vertex indices should be sequential</remarks>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.AddVertex(Nucleus.Geometry.Vertex)">
+            <summary>
+            Add a new vertex to the mesh.
+            This operation will set the VertexIndex property of the vertex.
+            </summary>
+            <param name="v"></param>
+            <returns>The new vertex index</returns>
+            <remarks>The returned indices should be sequential and the 
+            VertexIndex property of the input vertex should be set.</remarks> 
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshBuilder.Finalize">
+            <summary>
+            Finalize the mesh building.
+            Will apply any necessary last steps to the mesh generation.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

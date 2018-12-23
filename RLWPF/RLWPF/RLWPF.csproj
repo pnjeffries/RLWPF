@@ -60,7 +60,6 @@
     <Compile Include="ArtitectTester.cs" />
     <Compile Include="ASCIIBlueprintConverter.cs" />
     <Compile Include="ASCIIConverter.cs" />
-    <Compile Include="RLWPFModule.cs" />
     <Compile Include="VisibilityOpacityConverter.cs" />
     <Page Include="ArtitectTest.xaml">
       <SubType>Designer</SubType>
@@ -117,6 +116,10 @@
     <ProjectReference Include="..\..\..\Nucleus\Nucleus\Nucleus\Nucleus.csproj">
       <Project>{7635522c-178f-4db5-9106-ff8dfd4b833b}</Project>
       <Name>Nucleus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RL\RL.csproj">
+      <Project>{c4f091cb-97d8-484a-9cbd-dc8f1471fcd0}</Project>
+      <Name>RL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

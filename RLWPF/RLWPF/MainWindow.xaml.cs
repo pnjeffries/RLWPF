@@ -28,7 +28,7 @@ namespace RLWPF
         {
             InitializeComponent();
 
-            GameEngine.Instance.LoadModule(new RLWPFModule());
+            GameEngine.Instance.LoadModule(new RLModule());
             GameEngine.Instance.StartUp();
 
             this.DataContext = GameEngine.Instance;
