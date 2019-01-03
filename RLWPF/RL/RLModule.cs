@@ -38,27 +38,64 @@ namespace RLWPF
 
             var blueprint = generator.Blueprint;
 
+
+            var playerFaction = new Faction("Player");
+            var enemyFaction = new Faction("Enemy");
+
+
             // Build dungeon from blueprint:
             Random rng = new Random();
             for (int i = 0; i < mapX; i++)
             {
                 for (int j = 0; j < mapY; j++)
                 {
-                    if (blueprint[i,j].IsWall())
+                    CellGenerationType cGT = blueprint[i, j];
+                    if (cGT.IsWall() || cGT == CellGenerationType.Untouched)
                     {
-                        var wall = new PointElement("Wall");
+                        var wall = new GameElement("Wall");
                         wall.SetData(new ASCIIStyle("█"), new PrefabStyle("Wall"), new MapCellCollider(),
-                            new VisionBlocker(), new Memorable());
+                            new VisionBlocker(), new Memorable(), new Inertia(true));
                         map[i, j].PlaceInCell(wall);
                         state.Elements.Add(wall);
                     }
-                    else if (blueprint[i,j] == CellGenerationType.Door && rng.NextDouble() > 0.5)
+                    else if (cGT == CellGenerationType.Door && rng.NextDouble() > 0.5)
                     {
                         // Create door
-                        var door = new PointElement("Door");
-                        door.SetData(new ASCIIStyle("+"), new VisionBlocker(), new Memorable());
+                        /*var door = new PointElement("Door");
+                        door.SetData(new ASCIIStyle("+"), new VisionBlocker(), new Memorable(), new Inertia(true));
                         map[i, j].PlaceInCell(door);
-                        //state.Elements.Add(door);
+                        state.Elements.Add(door);*/
+                    }
+                    else if (cGT == CellGenerationType.Void)
+                    {
+                        if (rng.NextDouble() < 0.1)
+                        {
+                            var eSword = new GameElement("Sword");
+                            eSword.SetData(
+                                new ASCIIStyle("↑"), //TODO: Prefab style
+                                new EquippableItem(),
+                                new ItemAction(new WindUpAction()));
+
+                            // Create enemy
+                            var enemy2 = new GameElement("Enemy");
+                            enemy2.SetData(enemyFaction, new ASCIIStyle("e"), new PrefabStyle("Meeple"),
+                                new MapCellCollider(), new MapAwareness(10), new Memorable(),
+                                new HitPoints(3),
+                                new AvailableActions(), new TurnCounter(),
+                                new WaitAbility(),
+                                new MoveCellAbility(),
+                                new BumpAttackAbility(),
+                                new Equipped(
+                                    new EquipmentSlot("1", InputFunction.Ability_1, eSword),
+                                    new EquipmentSlot("2", InputFunction.Ability_2),
+                                    new EquipmentSlot("3", InputFunction.Ability_3),
+                                    new EquipmentSlot("4", InputFunction.Ability_4),
+                                    new EquipmentSlot("5", InputFunction.Ability_5),
+                                    new EquipmentSlot("6", InputFunction.Ability_6)),
+                                new UseItemAbility());
+                            map[i, j].PlaceInCell(enemy2);
+                            state.Elements.Add(enemy2);
+                        }
                     }
                 }
             }
@@ -91,32 +128,50 @@ namespace RLWPF
             }*/
 
             // Create stairs
-            var stairs = new PointElement("Stairs");
-            stairs.SetData(new ASCIIStyle("<"), new Memorable());//, new MapCellCollider());
+            var stairs = new GameElement("Stairs");
+            stairs.SetData(new ASCIIStyle("<"), new Memorable(), new Inertia(true));//, new MapCellCollider());
             map[10, 13].PlaceInCell(stairs);
             //state.Elements.Add(stairs);
 
+            var sword = new GameElement("Sword");
+            sword.SetData(
+                new ASCIIStyle("↑"), //TODO: Prefab style
+                new EquippableItem(),
+                new PickUp(),
+                new ItemAction(new WindUpAction()));
+            map[10, 12].PlaceInCell(sword);
+            state.Elements.Add(sword);
+
             // Create player character
-            var hero = new PointElement("Hero");
-            hero.SetData(new ASCIIStyle("@"), new PrefabStyle("Meeple"),
-                new MapCellCollider(), 
-                new MapAwareness(10), new Memorable(), 
+            var hero = new GameElement("Hero");
+            hero.SetData(playerFaction,
+                new ASCIIStyle("@"), new PrefabStyle("Meeple2"),
+                new MapCellCollider(),
+                new MapAwareness(10), new Memorable(),
+                new HitPoints(9),
+                new Equipped(
+                    new EquipmentSlot("1", InputFunction.Ability_1),
+                    new EquipmentSlot("2", InputFunction.Ability_2),
+                    new EquipmentSlot("3", InputFunction.Ability_3),
+                    new EquipmentSlot("4", InputFunction.Ability_4),
+                    new EquipmentSlot("5", InputFunction.Ability_5),
+                    new EquipmentSlot("6", InputFunction.Ability_6)),
                 new AvailableActions(), new TurnCounter(),
-                new WaitAbility(), new MoveCellAbility());
+                new WaitAbility(), 
+                new MoveCellAbility(),
+                new BumpAttackAbility(),
+                new UseItemAbility(),
+                new PickUpAbility());
             map[10,13].PlaceInCell(hero);
             state.Elements.Add(hero);
             state.Controlled = hero;
 
-                    
-
             // Create test enemy
-            var enemy = new PointElement("Enemy");
-            enemy.SetData(new ASCIIStyle("M"), new VisionBlocker());//, new MapCellCollider());
+            var enemy = new GameElement("Enemy");
+            enemy.SetData(enemyFaction, new ASCIIStyle("M"), new VisionBlocker());//, new MapCellCollider());
             //map[4, 3].PlaceInCell(enemy);
 
-            var enemy2 = new PointElement("Enemy");
-            enemy2.SetData(new ASCIIStyle("s"), new MapCellCollider());
-            //map[13, 9].PlaceInCell(enemy2);
+           
 
             return state;
         }

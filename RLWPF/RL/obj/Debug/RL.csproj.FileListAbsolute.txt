@@ -14,3 +14,4 @@ C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Unity.pdb
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Unity.xml
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.csprojAssemblyReference.cache
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\obj\Debug\RL.csproj.CopyComplete
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLWPF\RL\bin\Debug\Nucleus.Game.xml

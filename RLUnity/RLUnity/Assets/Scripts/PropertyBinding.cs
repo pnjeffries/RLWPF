@@ -1,14 +1,28 @@
 ﻿using Nucleus.Game;
 using Nucleus.UI;
 using Nucleus.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Nucleus.Extensions;
 
 public class PropertyBinding : BindingBase
 {
     #region Properties
+
+    /// <summary>
+    /// Field to specify the target component type.
+    /// If null, a default will be automatically assumed.
+    /// </summary>
+    public string TargetType = null;
+
+    /// <summary>
+    /// Field to specify the target path on the target component.
+    /// If null, a default will be automatically assumed.
+    /// </summary>
+    public string TargetPath = null;
 
     /// <summary>
     /// The binding manager
@@ -72,38 +86,34 @@ public class PropertyBinding : BindingBase
     /// </summary>
     public override void RefreshUI()
     {
-        double value;
-        string textValue = Binding.GetBoundValueString();
+        // User override of target properties:
+        if (TargetType != null)
+        {
+            Component compo = GetComponent(TargetType);
+            compo.SetByPath(TargetPath, Binding.GetBoundValue());
+        }
+
 
         // Will currently work for input fields and text:
-        var field = GetComponent<InputField>();
+        InputField field = GetComponent<InputField>();
         if (field != null)
         {
-            if (double.TryParse(Binding.GetBoundValue().ToString(), out value)) // output is a number
-            {
-                field.text = string.Format(StringFormat, value.ToString());
-            }
-            else
-            {
-                field.text = string.Format(StringFormat, textValue);
-            }
-
+            field.text = Binding.GetBoundValueString();
         }
         else
         {
-            // Assuming it's text...
-            Text text = GetComponent<Text>();
-            if (text != null)
+            Slider slider = GetComponent<Slider>();
+            if (slider != null)
             {
-                //text.text = string.Format(StringFormat, textValue);
-
-                if (double.TryParse(Binding.GetBoundValue().ToString(), out value)) // output is a number
+                slider.value = Convert.ToSingle(Binding.GetBoundValue());
+            }
+            else
+            {
+                // Assuming it's text...
+                Text text = GetComponent<Text>();
+                if (text != null)
                 {
-                    text.text = string.Format(StringFormat, value.ToString("N2"));
-                }
-                else
-                {
-                    text.text = string.Format(StringFormat, textValue);
+                    text.text = Binding.GetBoundValueString();
                 }
             }
         }

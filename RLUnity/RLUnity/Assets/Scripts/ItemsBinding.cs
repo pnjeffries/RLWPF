@@ -115,9 +115,12 @@ public class ItemsBinding : BindingBase
                 {
                     // Create representation from template:
                     var template = GetTemplate(item);
-                    var representation = Instantiate(template, this.transform);
-                    representation.SetDataContext(item);
-                    _ItemRepresentationMap.Add(item, representation);
+                    if (template != null)
+                    {
+                        var representation = Instantiate(template, this.transform);
+                        representation.SetDataContext(item);
+                        _ItemRepresentationMap.Add(item, representation);
+                    }
                 }
             }
         }

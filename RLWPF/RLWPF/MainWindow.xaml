@@ -67,12 +67,27 @@
                         <TextBlock Text="MW: Knife"/>
                         <TextBlock Text="RW: Harpoon Gun [5]"/>
                         <TextBlock Text="- - - - - - - - -" HorizontalAlignment="Center"/>
-                        <TextBlock Text="1: Ink Sac"/>
-                        <TextBlock Text="2: Healing Salve"/>
-                        <TextBlock Text="3: Torpedo [3]"/>
-                        <TextBlock Text="4: "/>
-                        <TextBlock Text="5: "/>
-                        <TextBlock Text="6: "/>
+                        <ItemsControl ItemsSource="{Binding Path=State.Controlled.Data[Equipped].Slots}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel></StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock Grid.Column="1" Text=": "/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Path=Item.Name}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                         <TextBlock Text="- - - - - - - - -" HorizontalAlignment="Center"/>
                         <TextBlock Text="..." TextWrapping="WrapWithOverflow"/>
                     </StackPanel>

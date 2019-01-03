@@ -1309,6 +1309,41 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Nucleus.Base.Deletable">
+            <summary>
+            A named object which implements the IDeletable interface to allow it to be
+            tagged for deletion
+            </summary>
+        </member>
+        <member name="F:Nucleus.Base.Deletable._IsDeleted">
+            <summary>
+            Private backing field for IsDeleted property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Base.Deletable.IsDeleted">
+            <summary>
+            Get a boolean value indicating whether this object has been
+            marked for deletion.  This flag indicates that the object should be
+            ignored in any operation that acts only on the current state of the
+            model and that it should be removed during the next cleanup sweep.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Base.Deletable.Delete">
+            <summary>
+            Delete this object.
+            The object itself will not be immediately removed from the model
+            but will instead be flagged for future removal and ignored in most
+            operations.  Check the IsDeleted property to see whether this
+            object is marked for deletion.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Base.Deletable.Undelete">
+            <summary>
+            Undelete this object.
+            If the deletion flag on this object is set it will be unset and
+            the object restored.
+            </summary>
+        </member>
         <member name="T:Nucleus.Base.DoubleParameter">
             <summary>
             A named input or output parameter which holds a double value
@@ -1376,6 +1411,38 @@
             specified units.
             </summary>
             <param name="units"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Base.Gender">
+            <summary>
+            Enumerated value representing grammatical gender
+            </summary>
+        </member>
+        <member name="F:Nucleus.Base.Gender.Neutral">
+            <summary>
+            Gender-neutral terms - 'its', 'their' etc.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Base.Gender.Masculine">
+            <summary>
+            Maculine terms - i.e. 'his'
+            </summary>
+        </member>
+        <member name="F:Nucleus.Base.Gender.Feminine">
+            <summary>
+            Feminine terms - i.e. 'her'
+            </summary>
+        </member>
+        <member name="T:Nucleus.Base.GenderHelper">
+            <summary>
+            Static helper functions to aid working with the Gender enum
+            </summary>
+        </member>
+        <member name="M:Nucleus.Base.GenderHelper.GenderOf(System.Object)">
+            <summary>
+            Get the gender of the specified object (if applicable)
+            </summary>
+            <param name="obj"></param>
             <returns></returns>
         </member>
         <member name="T:Nucleus.Base.IFastDuplicatable">
@@ -5765,6 +5832,13 @@
             <param name="cellIndex"></param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Geometry.ICellMap.GetCell(System.Int32)">
+            <summary>
+            Get the cell object at the specified index
+            </summary>
+            <param name="cellIndex"></param>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Geometry.ICellMap.IndexAt(Nucleus.Geometry.Vector)">
             <summary>
             Get the index of the cell at the specified location
@@ -5865,6 +5939,15 @@
             <param name="location">A point vector which lies within the cell to be retrieved.</param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Geometry.ICellMapExtensions.CellsAt``1(Nucleus.Geometry.ICellMap{``0},System.Collections.Generic.IList{Nucleus.Geometry.Vector})">
+            <summary>
+            Get the items in the cells at the specified locations
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="map"></param>
+            <param name="locations"></param>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Geometry.ICellMapExtensions.AdjacentCell``1(Nucleus.Geometry.ICellMap{``0},System.Int32,System.Int32)">
             <summary>
             Get the specified adjacent cell to the specified cell
@@ -5910,6 +5993,14 @@
             <param name="index"></param>
             <param name="cell"></param>
         </member>
+        <member name="M:Nucleus.Geometry.ICellMapExtensions.SetAll``1(Nucleus.Geometry.ICellMap{``0},``0)">
+            <summary>
+            Set all cells in this map to the same value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="map"></param>
+            <param name="value"></param>
+        </member>
         <member name="M:Nucleus.Geometry.ICellMapExtensions.InitialiseCells``1(Nucleus.Geometry.ICellMap{``0})">
             <summary>
             Populate this map with cells
@@ -5926,6 +6017,27 @@
             <param name="transparencyCondition"></param>
             <param name="outGrid"></param>
             <param name="visibleValue">The value to set in the output grid to indicate visibility</param>
+        </member>
+        <member name="M:Nucleus.Geometry.ICellMapExtensions.GenerateDijkstraMap``1(Nucleus.Geometry.ICellMap{``0},System.Func{``0,System.Boolean},System.Func{``0,System.Boolean},System.Int32,System.Int32)">
+            <summary>
+            Generate a Dijkstra Map to aid AI navigation through this map
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="map"></param>
+            <param name="startingValue"></param>
+            <param name="targetCondition"></param>
+            <param name="passCondition"></param>
+            <param name="blockedValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.ICellMapExtensions.IterateDijkstraMap(Nucleus.Geometry.ICellMap{System.Int32},System.Int32)">
+            <summary>
+            Run one iteration of a dijkstra map update.  Each cell is set to the lowest
+            adjacent value - 1.
+            </summary>
+            <param name="dMap"></param>
+            <param name="blockedValue"></param>
+            <returns></returns>
         </member>
         <member name="T:Nucleus.Geometry.IMapCell">
             <summary>
@@ -5996,6 +6108,20 @@
             TODO: Modify this for multi-cell entities?
             </summary>
             <param name="element"></param>
+        </member>
+        <member name="T:Nucleus.Geometry.MapCellExtensions">
+            <summary>
+            Extension methods for the MapCell class
+            </summary>
+        </member>
+        <member name="M:Nucleus.Geometry.MapCellExtensions.AdjacentCellInDirection``1(``0,Nucleus.Geometry.Vector)">
+            <summary>
+            Gets the adjacent cell (of the same type) in the specified direction
+            </summary>
+            <typeparam name="TMapCell"></typeparam>
+            <param name="cell"></param>
+            <param name="direction"></param>
+            <returns></returns>
         </member>
         <member name="T:Nucleus.Geometry.MapCellDataStore">
             <summary>
@@ -6667,6 +6793,13 @@
             <param name="sizeX"></param>
             <param name="sizeY"></param>
             <param name="cellSize"></param>
+        </member>
+        <member name="M:Nucleus.Geometry.SquareCellMap`1.GetCell(System.Int32)">
+            <summary>
+            Get the cell object at the specified index
+            </summary>
+            <param name="cellIndex"></param>
+            <returns></returns>
         </member>
         <member name="M:Nucleus.Geometry.SquareCellMap`1.Exists(System.Int32)">
             <summary>
@@ -14097,12 +14230,20 @@
             <param name="vectors"></param>
             <returns></returns>
         </member>
-        <member name="M:Nucleus.Geometry.VectorExtensions.Move(Nucleus.Geometry.Vector[],Nucleus.Geometry.Vector)">
+        <member name="M:Nucleus.Geometry.VectorExtensions.Move(System.Collections.Generic.IList{Nucleus.Geometry.Vector},Nucleus.Geometry.Vector)">
             <summary>
             Move all vectors in this array along a translation vector and return the result
             </summary>
             <param name="vectors"></param>
             <param name="translation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.VectorExtensions.Rotate(System.Collections.Generic.IList{Nucleus.Geometry.Vector},Nucleus.Geometry.Angle)">
+            <summary>
+            Rotate all these vectors by an angle on the XY plane
+            </summary>
+            <param name="vectors"></param>
+            <param name="angle"></param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Geometry.VectorExtensions.GlobalToLocal(Nucleus.Geometry.Vector[],Nucleus.Geometry.ICoordinateSystem,System.Boolean)">
@@ -14217,6 +14358,26 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Nucleus.Logs.GrammaticalPerson">
+            <summary>
+            Enumerated value representing grammatical person
+            </summary>
+        </member>
+        <member name="F:Nucleus.Logs.GrammaticalPerson.First">
+            <summary>
+            First persion - the speaker - 'I', 'my' etc.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Logs.GrammaticalPerson.Second">
+            <summary>
+            Second person - the addressee - 'You', 'your' etc.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Logs.GrammaticalPerson.Third">
+            <summary>
+            Third person - other parties - 'They', 'their' etc.
+            </summary>
+        </member>
         <member name="T:Nucleus.Logs.LogScriptMarkupParser">
             <summary>
             Class to parse markup tags in log script entries
@@ -14224,12 +14385,26 @@
         </member>
         <member name="F:Nucleus.Logs.LogScriptMarkupParser.MARKUP_OPEN">
             <summary>
-            The character which depicts the start of a markup expression
+            The character which depicts the start of 
+            a formatting markup expression
             </summary>
         </member>
         <member name="F:Nucleus.Logs.LogScriptMarkupParser.MARKUP_CLOSE">
             <summary>
-            The character which depicts the end of a markup expression
+            The character which depicts the end of 
+            a formatting markup expression
+            </summary>
+        </member>
+        <member name="F:Nucleus.Logs.LogScriptMarkupParser.FUNCTION_OPEN">
+            <summary>
+            The character which depicts the start of
+            a function markup expression
+            </summary>
+        </member>
+        <member name="F:Nucleus.Logs.LogScriptMarkupParser.FUNCTION_CLOSE">
+            <summary>
+            The character which depicts the end of
+            a function markup expression
             </summary>
         </member>
         <member name="F:Nucleus.Logs.LogScriptMarkupParser.ARGUMENT_OPEN">
@@ -14352,12 +14527,22 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Nucleus.Logs.LogScriptMarkupParser.SUBJECT(System.Int32,System.String)">
+        <member name="M:Nucleus.Logs.LogScriptMarkupParser.SUBJECT(System.String,System.String)">
             <summary>
             Retrieve a value from the specified subject
             </summary>
             <param name="index"></param>
             <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Logs.LogScriptMarkupParser.GENDER(System.String,System.String,System.String,System.String)">
+            <summary>
+            Select a variation based on the gender of a subject
+            </summary>
+            <param name="index"></param>
+            <param name="neutral"></param>
+            <param name="masculine"></param>
+            <param name="feminine"></param>
             <returns></returns>
         </member>
         <member name="T:Nucleus.Logs.ICalculationLog">
@@ -18214,49 +18399,54 @@
             tweening interpolation.
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.LINEAR">
+        <member name="F:Nucleus.Maths.Interpolation.Linear">
             <summary>
             Linear interpolation: t/d
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.QUADRATIC">
+        <member name="F:Nucleus.Maths.Interpolation.Quadratic">
             <summary>
             Quadratic interpolation: (t/d)^2
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.CUBIC">
+        <member name="F:Nucleus.Maths.Interpolation.Cubic">
             <summary>
             Cubic interpolation: (t/d)^3
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.SQUAREROOT">
+        <member name="F:Nucleus.Maths.Interpolation.SquareRoot">
             <summary>
             Square root interpolation: (t/d)^0.5
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.CUBEROOT">
+        <member name="F:Nucleus.Maths.Interpolation.CubeRoot">
             <summary>
             Cube root interpolation: (t/d)^1/3
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.EXPONENTIAL">
+        <member name="F:Nucleus.Maths.Interpolation.Exponential">
             <summary>
             Exponential interpolation: (exp(a*(t/d))-1)*1/(exp(a)-1)
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.ELASTIC">
+        <member name="F:Nucleus.Maths.Interpolation.Elastic">
             <summary>
             Pseudo-elastic interpolation: 1/(exp(a)-1)*cos(b*(t/d)*2*PI)*exp(a*(t/d))-1/(exp(a)-1)
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.SIN">
+        <member name="F:Nucleus.Maths.Interpolation.Sin">
             <summary>
             Sine interpolation: sin(a*(t/d)*2*PI)
             </summary>
         </member>
-        <member name="F:Nucleus.Maths.Interpolation.COS">
+        <member name="F:Nucleus.Maths.Interpolation.Cos">
             <summary>
             Cosine interpolation: cos(a*(t/d)*2*PI)
+            </summary>
+        </member>
+        <member name="F:Nucleus.Maths.Interpolation.Step">
+            <summary>
+            Step interpolation: jumps from one value to another at the mid-point
             </summary>
         </member>
         <member name="T:Nucleus.Maths.InterpolationExtensions">
@@ -18267,6 +18457,21 @@
         <member name="M:Nucleus.Maths.InterpolationExtensions.Interpolate(Nucleus.Maths.Interpolation,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Interpolate between two values using the algorithm represented by this enumerated value
+            </summary>
+            <param name="i"></param>
+            <param name="v0">The first value to interpolate from</param>
+            <param name="v1">The second value to interpolate towards</param>
+            <param name="t">The interpolation parameter.  Typically will be between 0-1,
+            where 0 is v0 and 1 is v1</param>
+            <param name="alpha">The optional Alpha parameter used in some tweening methods</param>
+            <param name="beta">The optional Beta parameter used in some tweening methods</param>
+            <returns>The interpolated value</returns>
+        </member>
+        <member name="M:Nucleus.Maths.InterpolationExtensions.Interpolate(Nucleus.Maths.Interpolation,Nucleus.Geometry.Angle,Nucleus.Geometry.Angle,System.Double,System.Double,System.Double)">
+            <summary>
+            Interpolate between two angles using the algorithm represented by this enumerated value.
+            The direction of rotation will be automatically determined as whichever is the smallest
+            change in angle.
             </summary>
             <param name="i"></param>
             <param name="v0">The first value to interpolate from</param>
@@ -19257,6 +19462,32 @@
             <summary>
             A collection of Design cases
             </summary>
+        </member>
+        <member name="T:Nucleus.Model.ElementGender">
+            <summary>
+            Data component to represent the gender of an element
+            </summary>
+        </member>
+        <member name="F:Nucleus.Model.ElementGender._Gender">
+            <summary>
+            Private backing member variable for the Gender property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Model.ElementGender.Gender">
+            <summary>
+            The gender of the element
+            </summary>
+        </member>
+        <member name="M:Nucleus.Model.ElementGender.#ctor">
+            <summary>
+            Initialise a neutral gender
+            </summary>
+        </member>
+        <member name="M:Nucleus.Model.ElementGender.#ctor(Nucleus.Base.Gender)">
+            <summary>
+            Initialise with the specified gender
+            </summary>
+            <param name="gender"></param>
         </member>
         <member name="T:Nucleus.Model.ElementUse">
             <summary>
@@ -21428,6 +21659,26 @@
             <param name="pool"></param>
             <param name="current"></param>
         </member>
+        <member name="M:Nucleus.Model.ElementCollection`2.FirstWithDataComponent``1(`0)">
+            <summary>
+            Get the first element in this collection with an attached data component
+            of the specified type.
+            </summary>
+            <typeparam name="TDataComponent">The type of attached data component.</typeparam>
+            <param name="ignore">Ignore this element in the collection, even if it has the
+            relevant component.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Model.ElementCollection`2.AllWithDataComponent``1(`0)">
+            <summary>
+            Get all elements in this collection with an attached data component
+            of the specified type.
+            </summary>
+            <typeparam name="TDataComponent">The type of attached data component</typeparam>
+            <param name="ignore">Ignore this element in the collection, even if it has the
+            relevant component.</param>
+            <returns></returns>
+        </member>
         <member name="T:Nucleus.Model.ElementCollection">
             <summary>
             A collection of elements
@@ -22360,19 +22611,6 @@
             and form the top-level of data within that model.
             </summary>
         </member>
-        <member name="F:Nucleus.Model.ModelObject._IsDeleted">
-            <summary>
-            Private backing field for IsDeleted property
-            </summary>
-        </member>
-        <member name="P:Nucleus.Model.ModelObject.IsDeleted">
-            <summary>
-            Get a boolean value indicating whether this object has been
-            marked for deletion.  This flag indicates that the object should be
-            ignored in any operation that acts only on the current state of the
-            model and that it should be removed during the next cleanup sweep.
-            </summary>
-        </member>
         <member name="F:Nucleus.Model.ModelObject._Model">
             <summary>
             Private backing field for Model property
@@ -22436,22 +22674,6 @@
             Name constructor
             </summary>
             <param name="name"></param>
-        </member>
-        <member name="M:Nucleus.Model.ModelObject.Delete">
-            <summary>
-            Delete this object.
-            The object itself will not be immediately removed from the model
-            but will instead be flagged for future removal and ignored in most
-            operations.  Check the IsDeleted property to see whether this
-            object is marked for deletion.
-            </summary>
-        </member>
-        <member name="M:Nucleus.Model.ModelObject.Undelete">
-            <summary>
-            Undelete this object.
-            If the deletion flag on this object is set it will be unset and
-            the object restored.
-            </summary>
         </member>
         <member name="M:Nucleus.Model.ModelObject.NotifyPropertyChanged(System.String)">
             <summary>
@@ -26671,6 +26893,106 @@
             Creates a prefab style referencing the specified prefab
             </summary>
             <param name="prefabKey"></param>
+        </member>
+        <member name="T:Nucleus.Rendering.SFXSupervisor">
+            <summary>
+            Supervisor class responsible for cacheing special effects triggers
+            </summary>
+        </member>
+        <member name="F:Nucleus.Rendering.SFXSupervisor._Triggers">
+            <summary>
+            Private backing member variable for the Triggers property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Rendering.SFXSupervisor.Triggers">
+            <summary>
+            The 'to do' list for SFX triggers
+            </summary>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXSupervisor.Clear">
+            <summary>
+            Clear the list of SFX Triggers
+            </summary>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXSupervisor.Trigger(System.String)">
+            <summary>
+            Trigger a special effect
+            </summary>
+            <param name="keyword">The keyword denoting the effect to trigger</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXSupervisor.Trigger(System.String,Nucleus.Geometry.Vector)">
+            <summary>
+            Trigger a special effect
+            </summary>
+            <param name="keyword">The keyword denoting the effect to trigger</param>
+            <param name="position">The (starting) position of the effect</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXSupervisor.Trigger(System.String,Nucleus.Geometry.Vector,Nucleus.Geometry.Vector)">
+            <summary>
+            Trigger a special effect
+            </summary>
+            <param name="keyword">The keyword denoting the effect to trigger</param>
+            <param name="position">The (starting) position of the effect</param>
+            <param name="direction">The direction or path of the effect</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Rendering.SFXTrigger">
+            <summary>
+            A class that is used to trigger a special effect
+            </summary>
+        </member>
+        <member name="F:Nucleus.Rendering.SFXTrigger._KeyWord">
+            <summary>
+            Private backing member variable for the KeyWord property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Rendering.SFXTrigger.KeyWord">
+            <summary>
+            The keyword which defines the type of special effect to be created
+            </summary>
+        </member>
+        <member name="F:Nucleus.Rendering.SFXTrigger._Position">
+            <summary>
+            Private backing member variable for the Position property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Rendering.SFXTrigger.Position">
+            <summary>
+            The position at which the effect is to be created, if applicable.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Rendering.SFXTrigger._Direction">
+            <summary>
+            Private backing member variable for the Direction property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Rendering.SFXTrigger.Direction">
+            <summary>
+            The direction in/path along which the effect should be orientated/moved, if applicable
+            </summary>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXTrigger.#ctor(System.String)">
+            <summary>
+            Creates an SFX trigger for the specified keyword
+            </summary>
+            <param name="keyword"></param>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXTrigger.#ctor(System.String,Nucleus.Geometry.Vector)">
+            <summary>
+            Creates an SFX trigger for the specified keyword at the specified position
+            </summary>
+            <param name="keyword"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:Nucleus.Rendering.SFXTrigger.#ctor(System.String,Nucleus.Geometry.Vector,Nucleus.Geometry.Vector)">
+            <summary>
+            Creates an SFX trigger for the specified keyword, position and direction
+            </summary>
+            <param name="keyword"></param>
+            <param name="position"></param>
+            <param name="direction"></param>
         </member>
         <member name="T:Nucleus.Rendering.SpriteAnimation">
             <summary>

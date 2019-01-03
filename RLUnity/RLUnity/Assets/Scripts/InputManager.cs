@@ -11,6 +11,16 @@ public class InputManager : MonoBehaviour
     private Dictionary<KeyCode, InputFunction> _KeyMapping =
             new Dictionary<KeyCode, InputFunction>();
 
+    /// <summary>
+    /// The amount of time the current set of keys has been held down
+    /// </summary>
+    private float _HeldTime = 0;
+
+    /// <summary>
+    /// The amount of time before the key press will be repeated
+    /// </summary>
+    public float RepeatTime = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +31,16 @@ public class InputManager : MonoBehaviour
         _KeyMapping.Add(KeyCode.LeftArrow, InputFunction.Left);
         _KeyMapping.Add(KeyCode.RightArrow, InputFunction.Right);
         _KeyMapping.Add(KeyCode.Space, InputFunction.Wait);
+        _KeyMapping.Add(KeyCode.Alpha1, InputFunction.Ability_1);
+        _KeyMapping.Add(KeyCode.Alpha2, InputFunction.Ability_2);
+        _KeyMapping.Add(KeyCode.Alpha3, InputFunction.Ability_3);
+        _KeyMapping.Add(KeyCode.Alpha4, InputFunction.Ability_4);
+        _KeyMapping.Add(KeyCode.Alpha5, InputFunction.Ability_5);
+        _KeyMapping.Add(KeyCode.Alpha6, InputFunction.Ability_6);
+        _KeyMapping.Add(KeyCode.Alpha7, InputFunction.Ability_7);
+        _KeyMapping.Add(KeyCode.Alpha8, InputFunction.Ability_8);
+        _KeyMapping.Add(KeyCode.Alpha9, InputFunction.Ability_9);
+        _KeyMapping.Add(KeyCode.G, InputFunction.PickUp);
     }
 
     // Update is called once per frame
@@ -28,6 +48,7 @@ public class InputManager : MonoBehaviour
     {
         KeyDown();
         KeyUp();
+        KeyHeld();
     }
 
     /// <summary>
@@ -42,6 +63,7 @@ public class InputManager : MonoBehaviour
                 if (Input.GetKeyDown(kvp.Key))
                     GameEngine.Instance.Input.InputPress(kvp.Value);
             }
+            _HeldTime = -RepeatTime;
         }
     }
 
@@ -52,8 +74,32 @@ public class InputManager : MonoBehaviour
     {
         foreach (var kvp in _KeyMapping)
         {
-            if (Input.GetKeyDown(kvp.Key))
+            if (Input.GetKeyUp(kvp.Key))
                 GameEngine.Instance.Input.InputRelease(kvp.Value);
         }
+    }
+
+    /// <summary>
+    /// Deals with auto-repeating when a key is held down
+    /// </summary>
+    private void KeyHeld()
+    {
+        if (Input.anyKey)
+        {
+            _HeldTime += Time.deltaTime;
+            if (_HeldTime > RepeatTime)
+            {
+                foreach (var kvp in _KeyMapping)
+                {
+                    if (Input.GetKey(kvp.Key))
+                    {
+                        GameEngine.Instance.Input.InputRelease(kvp.Value);
+                        _HeldTime = 0;
+                        return;
+                    }
+                }
+            }
+        }
+        else _HeldTime = -RepeatTime;
     }
 }

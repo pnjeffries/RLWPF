@@ -4,6 +4,23 @@
         <name>Nucleus.Unity</name>
     </assembly>
     <members>
+        <member name="T:Nucleus.Unity.AnimatorBase`1">
+            <summary>
+            Base class for Unity script components that apply a Nucleus tweening
+            animation.
+            </summary>
+            <typeparam name="TAnimation"></typeparam>
+        </member>
+        <member name="F:Nucleus.Unity.AnimatorBase`1.SpeedFactor">
+            <summary>
+            A factor applied to the speed of animations
+            </summary>
+        </member>
+        <member name="P:Nucleus.Unity.AnimatorBase`1.Animation">
+            <summary>
+            Get or set the current animation
+            </summary>
+        </member>
         <member name="T:Nucleus.Unity.BindingBase">
             <summary>
             Base class for data binding scripts
@@ -63,6 +80,32 @@
             <param name="obj"></param>
             <param name="dataContext"></param>
         </member>
+        <member name="T:Nucleus.Unity.GameObjectExtensions">
+            <summary>
+            Extension methods for Unity GameObjects
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.GameObjectExtensions.GetBindingDataContext(UnityEngine.GameObject)">
+            <summary>
+            Get the bound data context for this object, if it has any attached
+            data binding scripts.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.NucleusAngleExtensions">
+            <summary>
+            Extension methods for the Nucleus Angle struct
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.NucleusAngleExtensions.ToUnityQuaternion(Nucleus.Geometry.Angle)">
+            <summary>
+            Convert this Nucleus Angle to a Unity Quaternion representing a rotation of
+            that angle around the vertical axis.
+            </summary>
+            <param name="angle"></param>
+            <returns></returns>
+        </member>
         <member name="T:Nucleus.Unity.NucleusVectorExtensions">
             <summary>
             Extension methods for Nucleus Vectors
@@ -81,6 +124,19 @@
             Convert this Nucleus Vector to a 2D Unity equivalent
             </summary>
             <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.UnityQuaternionExtensions">
+            <summary>
+            Extension methods for the unity quaternion class
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.UnityQuaternionExtensions.ToNucleusAngle(UnityEngine.Quaternion)">
+            <summary>
+            Converts this quaternion to a Nucleus angle representing a rotation around the
+            vertical axis
+            </summary>
+            <param name="quaternion"></param>
             <returns></returns>
         </member>
         <member name="T:Nucleus.Unity.Extensions.UnityVector3Extensions">
@@ -131,6 +187,11 @@
             </summary>
             <param name="color"></param>
             <returns></returns>
+        </member>
+        <member name="T:Nucleus.Unity.OrientationAnimation">
+            <summary>
+            Animation to rotate a Unity gameobject about the vertical axis
+            </summary>
         </member>
         <member name="T:Nucleus.Unity.ToUnity">
             <summary>

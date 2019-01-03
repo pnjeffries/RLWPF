@@ -60,14 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\HotbarButtonClick.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\ItemsBinding.cs" />
+    <Compile Include="Assets\Scripts\OrientationBinding.cs" />
     <Compile Include="Assets\Scripts\PositionBinding.cs" />
     <Compile Include="Assets\Scripts\PropertyBinding.cs" />
+    <Compile Include="Assets\Scripts\SFXAutoKill.cs" />
+    <Compile Include="Assets\Scripts\SFXCreation.cs" />
     <Compile Include="Assets\Scripts\SmoothMoves.cs" />
+    <Compile Include="Assets\Scripts\SmoothRotate.cs" />
     <None Include="Assets\Assemblies\Nucleus.Unity.xml" />
     <None Include="Assets\Assemblies\Nucleus.xml" />
+    <None Include="Assets\Assemblies\Nucleus.Game.xml" />
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/jeffe/OneDrive/Documents/RLWPF/RLUnity/RLUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>

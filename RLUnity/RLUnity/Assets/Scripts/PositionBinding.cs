@@ -32,7 +32,7 @@ namespace Assets.Scripts
                 {
                     var animation = new PropertyAnimation(smoothie.gameObject, "transform.localPosition",
                         pos.ToUnityVector3(), 0.1,
-                        Interpolation.SIN,
+                        Interpolation.Sin,
                         delegate (object v1, object v2, double t, Interpolation i)
                         {
                             Vector pt1 = ((Vector3)v1).ToNucleusVector();
