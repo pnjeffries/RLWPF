@@ -72,9 +72,9 @@ namespace RLWPF
                         {
                             var eSword = new GameElement("Sword");
                             eSword.SetData(
-                                new ASCIIStyle("↑"), //TODO: Prefab style
+                                new ASCIIStyle("↑"), new PrefabStyle("Sword"), //TODO: Prefab style
                                 new EquippableItem(),
-                                new ItemAction(new WindUpAction()));
+                                new ItemActions(new WindUpAction()));
 
                             // Create enemy
                             var enemy2 = new GameElement("Enemy");
@@ -134,11 +134,12 @@ namespace RLWPF
             //state.Elements.Add(stairs);
 
             var sword = new GameElement("Sword");
+            //sword.Orientation = Angle.FromDegrees(45);
             sword.SetData(
-                new ASCIIStyle("↑"), //TODO: Prefab style
+                new ASCIIStyle("↑"), new PrefabStyle("Sword"),
                 new EquippableItem(),
                 new PickUp(),
-                new ItemAction(new WindUpAction()));
+                new ItemActions(new WindUpAction()));
             map[10, 12].PlaceInCell(sword);
             state.Elements.Add(sword);
 
