@@ -40,6 +40,12 @@ public class InputManager : MonoBehaviour
         _KeyMapping.Add(KeyCode.Alpha7, InputFunction.Ability_7);
         _KeyMapping.Add(KeyCode.Alpha8, InputFunction.Ability_8);
         _KeyMapping.Add(KeyCode.Alpha9, InputFunction.Ability_9);
+        _KeyMapping.Add(KeyCode.Z, InputFunction.Ability_1);
+        _KeyMapping.Add(KeyCode.X, InputFunction.Ability_2);
+        _KeyMapping.Add(KeyCode.C, InputFunction.Ability_3);
+        _KeyMapping.Add(KeyCode.V, InputFunction.Ability_4);
+        _KeyMapping.Add(KeyCode.B, InputFunction.Ability_5);
+        _KeyMapping.Add(KeyCode.N, InputFunction.Ability_6);
         _KeyMapping.Add(KeyCode.G, InputFunction.PickUp);
     }
 

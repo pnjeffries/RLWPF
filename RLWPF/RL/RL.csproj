@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreaturesLibrary.cs" />
+    <Compile Include="ItemsLibrary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RLModule.cs" />
   </ItemGroup>

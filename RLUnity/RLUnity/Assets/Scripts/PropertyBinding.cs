@@ -42,7 +42,7 @@ public class PropertyBinding : BindingBase
     #region Methods
 
     // Use this for initialization
-    public void Start()
+    public virtual void Start()
     {
         if (DataContext == null)
             DataContext = GameEngine.Instance;
@@ -57,7 +57,7 @@ public class PropertyBinding : BindingBase
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         BindingUpdates();
     }

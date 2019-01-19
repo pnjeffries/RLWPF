@@ -19,6 +19,23 @@
             The index of the cell that is targeted for this action
             </summary>
         </member>
+        <member name="T:Nucleus.Game.ExitStageAction">
+            <summary>
+            Action which allows an actor to move between stages
+            </summary>
+        </member>
+        <member name="T:Nucleus.Game.ActionFactory">
+            <summary>
+            Base class for objects which can be used to generate actions dynamically
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.ActionFactory.GenerateActions(Nucleus.Game.TurnContext,Nucleus.Game.AvailableActions)">
+            <summary>
+            Generate actions given the specified context and add them to the available actions
+            </summary>
+            <param name="context"></param>
+            <param name="addTo"></param>
+        </member>
         <member name="T:Nucleus.Game.ActionInputTrigger">
             <summary>
             Base class representing the input conditions under which an action will be triggered by the player
@@ -58,6 +75,61 @@
             <summary>
             An action which targets an element
             </summary>
+        </member>
+        <member name="T:Nucleus.Game.AOEAttackActionFactory">
+            <summary>
+            An action factory to produce AOEAttackActions
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.AOEAttackActionFactory._Offsets">
+            <summary>
+            Private backing member variable for the Offsets property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.AOEAttackActionFactory.Offsets">
+            <summary>
+            The array of cell offsets which is to be used to determine the area of effect 
+            of the action.  These are the offset vectors of the cell locations to be 
+            affected relative to the actor position, when the actor is orientated at
+            0 degrees (i.e. facing along the X-axis).  These offsets will be automatically 
+            rotatetd in order to give the pattern of effect in other directions.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.AOEAttackActionFactory.#ctor(Nucleus.Geometry.Vector[])">
+            <summary>
+            Creates an AOEAttackAction factory to create an attack pattern
+            with the specified list offsets.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.AOEAttackActionFactory.#ctor(System.Double[])">
+            <summary>
+            Creates an AOEAttackAction factory to create an attack pattern
+            with the specified list of alternating X and Y offset components.
+            </summary>
+            <param name="offsetComponents"></param>
+        </member>
+        <member name="T:Nucleus.Game.DirectionalActionFactory">
+            <summary>
+            Base class for ActionFactory types which produce actions for all 
+            surrounding directions
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.DirectionalActionFactory.GenerateActions(Nucleus.Game.TurnContext,Nucleus.Game.AvailableActions)">
+            <summary>
+            Generate actions given the specified context and add them to the available actions.
+            Basic implementation that provides the boilerplate for setting up different directions
+            </summary>
+            <param name="context"></param>
+            <param name="addTo"></param>
+        </member>
+        <member name="M:Nucleus.Game.DirectionalActionFactory.ActionForDirection(Nucleus.Geometry.Vector,Nucleus.Geometry.Vector,Nucleus.Geometry.MapCell,Nucleus.Game.TurnContext)">
+            <summary>
+            Generate the action for the specified direction and trigger cell
+            </summary>
+            <param name="direction"></param>
+            <param name="triggerCell"></param>
+            <param name="context"></param>
+            <returns></returns>
         </member>
         <member name="T:Nucleus.Game.GameActionCollection">
             <summary>
@@ -144,6 +216,31 @@
             Action whereby an element waits or rests for a turn
             </summary>
         </member>
+        <member name="T:Nucleus.Game.BlueprintCell">
+            <summary>
+            A cell in a stage map blueprint
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.BlueprintCell._GenerationType">
+            <summary>
+            Private backing member variable for the GenerationType property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.BlueprintCell.GenerationType">
+            <summary>
+            The generation type of the cell
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.BlueprintCell._Room">
+            <summary>
+            Private backing member variable for the Room property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.BlueprintCell.Room">
+            <summary>
+            The room that the cell occupies
+            </summary>
+        </member>
         <member name="T:Nucleus.Game.CellGenerationType">
             <summary>
             An enum to store the type of a cell during map generation
@@ -215,6 +312,13 @@
             A collection of room templates
             </summary>
         </member>
+        <member name="M:Nucleus.Game.RoomTemplateCollection.GetAllOfType(Nucleus.Game.RoomType)">
+            <summary>
+            Get all templates in this collection of the specified type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
         <member name="T:Nucleus.Game.RoomType">
             <summary>
             Room type enum
@@ -235,6 +339,47 @@
         <member name="T:Nucleus.Game.BumpAttackAbility">
             <summary>
             Data component which confers the ability to bump-attack
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.DirectionalItemUseAbility._ActionFactory">
+            <summary>
+            Private backing member variable for the ActionFactory property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.DirectionalItemUseAbility.ActionFactory">
+            <summary>
+            The ActionFactory used to generate actions
+            </summary>
+        </member>
+        <member name="T:Nucleus.Game.Components.DamageVulnerabilities">
+            <summary>
+            Data component to store the vulnerabilities of elements to different
+            forms of damage.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.Components.DamageVulnerabilities._BaseFactor">
+            <summary>
+            Private backing member variable for the BaseFactor property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.Components.DamageVulnerabilities.BaseFactor">
+            <summary>
+            The default factor to be applied to damage types not explicitly listed
+            </summary>
+        </member>
+        <member name="T:Nucleus.Game.Components.Inventory">
+            <summary>
+            The inventory of an element
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.Components.Inventory._Contents">
+            <summary>
+            Private backing member variable for the Contents property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.Components.Inventory.Contents">
+            <summary>
+            The items contained within this inventory
             </summary>
         </member>
         <member name="T:Nucleus.Game.DisableActions">
@@ -278,6 +423,16 @@
             <summary>
             Can this slot hold the specified item?
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Game.EquipmentSlot.DropItem(Nucleus.Model.Element,Nucleus.Game.EffectContext)">
+            <summary>
+            Drop the item held in this slot.
+            This will remove the item from the slot.  If the
+            item is a PickUp it will be added back to the map.
+            </summary>
+            <param name="dropper">The element dropping the item</param>
+            <param name="context">The current context</param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Game.EquipmentSlot.ToString">
@@ -337,6 +492,19 @@
             </summary>
             <param name="equipment"></param>
             <returns></returns>
+        </member>
+        <member name="M:Nucleus.Game.Equipped.DropAll(Nucleus.Model.Element,Nucleus.Game.EffectContext)">
+            <summary>
+            Drop all items in this
+            </summary>
+            <param name="dropper"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Game.ExitStageAbility">
+            <summary>
+            Grants the ability to move between stages through stage exits
+            </summary>
         </member>
         <member name="T:Nucleus.Game.HitPoints">
             <summary>
@@ -420,11 +588,6 @@
             The blueprint that the generator will work on
             </summary>
         </member>
-        <member name="P:Nucleus.Game.DungeonArtitect.RoomMap">
-            <summary>
-            The map of room references
-            </summary>
-        </member>
         <member name="P:Nucleus.Game.DungeonArtitect.ExitPlaced">
             <summary>
             Has the level exit yet been placed?
@@ -447,18 +610,36 @@
             with a suitable container snapshots will be taken as each room is added
             </summary>
         </member>
+        <member name="P:Nucleus.Game.DungeonArtitect.PathToExit">
+            <summary>
+            The number of rooms typically found between the entry and exit
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.DungeonArtitect.PreventParallelCorridors">
+            <summary>
+            If set to true, parallel corridors will be detected and prevented
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.DungeonArtitect.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new dungeon artitect to work within the specified bounds
+            </summary>
+            <param name="iSize"></param>
+            <param name="jSize"></param>
+        </member>
         <member name="M:Nucleus.Game.DungeonArtitect.TakeSnapshot">
             <summary>
             Take a snapshot of the current state of the blueprint and add it to the snapshots collection
             </summary>
         </member>
-        <member name="M:Nucleus.Game.DungeonArtitect.Generate(System.Int32,System.Int32,Nucleus.Game.RoomTemplate)">
+        <member name="M:Nucleus.Game.DungeonArtitect.Generate(System.Int32,System.Int32,Nucleus.Game.RoomTemplate,Nucleus.Geometry.CompassDirection)">
             <summary>
             Generate a dungeon map
             </summary>
             <param name="iStart"></param>
             <param name="jStart"></param>
-            <param name="startRoom"></param>
+            <param name="startRoom">The room to start with</param>
+            <param name="startDirection">The initial direction</param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Game.DungeonArtitect.IsCellAvailable(System.Int32,System.Int32,System.Int32)">
@@ -514,6 +695,16 @@
             <param name="rect"></param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Game.DungeonArtitect.CountRoomCells(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Count up the number of cells belonging to each room in the specified zone
+            </summary>
+            <param name="iMin"></param>
+            <param name="iMax"></param>
+            <param name="jMin"></param>
+            <param name="jMax"></param>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Game.DungeonArtitect.IsParallelToCorridor(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             Check whether there is a corridor running parallel to this region
@@ -546,6 +737,20 @@
             </summary>
             <param name="currentRoom"></param>
             <returns></returns>
+        </member>
+        <member name="M:Nucleus.Game.DungeonArtitect.DeleteCell(System.Int32,System.Int32,Nucleus.Game.Room)">
+            <summary>
+            'Delete' a cell in the blueprint by returning it to 
+            </summary>
+            <param name="i"></param>
+            <param name="j"></param>
+            <param name="room"></param>
+        </member>
+        <member name="M:Nucleus.Game.DungeonArtitect.DeleteRoom(Nucleus.Game.Room)">
+            <summary>
+            Delete an existing room
+            </summary>
+            <param name="room"></param>
         </member>
         <member name="M:Nucleus.Game.DungeonArtitect.GenerateRoom(Nucleus.Geometry.IntRectangle,Nucleus.Game.RoomTemplate)">
             <summary>
@@ -629,21 +834,6 @@
             Gets or sets whether this component is fixed and immovable
             </summary>
         </member>
-        <member name="T:Nucleus.Game.Components.Inventory">
-            <summary>
-            The inventory of an element
-            </summary>
-        </member>
-        <member name="F:Nucleus.Game.Components.Inventory._Contents">
-            <summary>
-            Private backing member variable for the Contents property
-            </summary>
-        </member>
-        <member name="P:Nucleus.Game.Components.Inventory.Contents">
-            <summary>
-            The items contained within this inventory
-            </summary>
-        </member>
         <member name="T:Nucleus.Game.IStartOfTurn">
             <summary>
             Interface for data components which process at the start of 
@@ -656,19 +846,31 @@
             </summary>
             <param name="context"></param>
         </member>
-        <member name="T:Nucleus.Game.ItemAction">
+        <member name="T:Nucleus.Game.ItemActions">
             <summary>
             A data component for use on items which 
             </summary>
         </member>
-        <member name="F:Nucleus.Game.ItemAction._Prototype">
+        <member name="F:Nucleus.Game.ItemActions._Prototype">
             <summary>
             Private backing member variable for the Prototype property
             </summary>
         </member>
-        <member name="P:Nucleus.Game.ItemAction.Prototype">
+        <member name="P:Nucleus.Game.ItemActions.Prototype">
             <summary>
             The prototype of the item action.
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.ItemActions.#ctor">
+            <summary>
+            Creates a blank itemaction
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.ItemActions.#ctor(Nucleus.Game.ActionFactory)">
+            <summary>
+            Creates an ItemAction using the default 
+            WindUpAction as a prototype followed by actions
+            generated using the specified action factory
             </summary>
         </member>
         <member name="T:Nucleus.Game.MapAwareness">
@@ -733,6 +935,31 @@
         <member name="T:Nucleus.Game.TemporaryAbility">
             <summary>
             Base class for temporary abilities that are removed 
+            </summary>
+        </member>
+        <member name="T:Nucleus.Game.StageExit">
+            <summary>
+            A component which tags an object as a gate between different stages
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.StageExit._TravelTo">
+            <summary>
+            Private backing member variable for the TravelTo property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.StageExit.TravelTo">
+            <summary>
+            The stage which this exit allows travel to
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.StageExit._CellIndex">
+            <summary>
+            Private backing member variable for the CellIndex property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.StageExit.CellIndex">
+            <summary>
+            The index of the cell to move to in the next stage
             </summary>
         </member>
         <member name="T:Nucleus.Game.TemporaryStatus">
@@ -834,6 +1061,29 @@
             <summary>
             The ability to be added to the target
             </summary>
+        </member>
+        <member name="T:Nucleus.Game.Effects.ExitStageEffect">
+            <summary>
+            Effect which will move the actor through the
+            specified stage exit
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.Effects.ExitStageEffect._Exit">
+            <summary>
+            Private backing member variable for the Exit property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.Effects.ExitStageEffect.Exit">
+            <summary>
+            The exit to move the target through
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.Effects.ExitStageEffect.#ctor(Nucleus.Game.StageExit)">
+            <summary>
+            Creates an ExitStageEffect to move through the specified
+            exit
+            </summary>
+            <param name="exit"></param>
         </member>
         <member name="T:Nucleus.Game.BasicEffect">
             <summary>
@@ -962,6 +1212,90 @@
             the inventory of the actor
             </summary>
         </member>
+        <member name="T:Nucleus.Game.SFXEffect">
+            <summary>
+            Trigger an SFX
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.SFXEffect._KeyWord">
+            <summary>
+            Private backing member variable for the KeyWord property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.SFXEffect.KeyWord">
+            <summary>
+            The keyword which defines the type of special effect to be created
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.SFXEffect._Position">
+            <summary>
+            Private backing member variable for the Position property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.SFXEffect.Position">
+            <summary>
+            The position at which the effect is to be created, if applicable.
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.SFXEffect._Direction">
+            <summary>
+            Private backing member variable for the Direction property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.SFXEffect.Direction">
+            <summary>
+            The direction in/path along which the effect should be orientated/moved, if applicable
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.SFXEffect._UseTargetPosition">
+            <summary>
+            Private backing member variable for the UseTargetPosition property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.SFXEffect.UseTargetPosition">
+            <summary>
+            If true, the position of the target will be taken as the position of the effect
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.SFXEffect.#ctor(System.String)">
+            <summary>
+            Trigger a special effect with the specified keyword
+            </summary>
+            <param name="keyword"></param>
+        </member>
+        <member name="M:Nucleus.Game.SFXEffect.#ctor(System.String,Nucleus.Geometry.Vector)">
+            <summary>
+            Trigger a special effect with the specified keyword at the specified position
+            </summary>
+            <param name="keyword"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:Nucleus.Game.SFXEffect.#ctor(System.String,Nucleus.Geometry.Vector,Nucleus.Geometry.Vector)">
+            <summary>
+            Trigger a special effect with the specified keyword at the specified position
+            in the specified direction
+            </summary>
+            <param name="keyword"></param>
+            <param name="position"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="M:Nucleus.Game.SFXEffect.#ctor(System.String,System.Boolean)">
+            <summary>
+            Trigger a special effect with the specified keyword at (optionally)
+            the position of the target
+            </summary>
+            <param name="keyword"></param>
+            <param name="useTargetPosition"></param>
+        </member>
+        <member name="M:Nucleus.Game.SFXEffect.#ctor(System.String,System.Boolean,Nucleus.Geometry.Vector)">
+            <summary>
+            Trigger a special effect with the specified keyword at (optionally)
+            the position of the target
+            </summary>
+            <param name="keyword"></param>
+            <param name="useTargetPosition"></param>
+            <param name="direction"></param>
+        </member>
         <member name="T:Nucleus.Game.SFXImpactEffect">
             <summary>
             A SFX effect that produces an effect at a point on the target
@@ -1049,6 +1383,16 @@
         <member name="F:Nucleus.Game.InputFunction.Left">
             <summary>
             Leftwards movement
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.InputFunction.Interact">
+            <summary>
+            Use an interactive object
+            </summary>
+        </member>
+        <member name="F:Nucleus.Game.InputFunction.UseExit">
+            <summary>
+            Use a level exit from one stage to another
             </summary>
         </member>
         <member name="F:Nucleus.Game.InputFunction.Wait">
@@ -1151,6 +1495,11 @@
             Called when the user releases a key or button
             </summary>
             <param name="input">The input function pressed</param>
+        </member>
+        <member name="T:Nucleus.Game.RoomTemplate">
+            <summary>
+            A template which is used to generate a room
+            </summary>
         </member>
         <member name="F:Nucleus.Game.RoomTemplate._RoomType">
             <summary>
@@ -1281,6 +1630,60 @@
             A dusty 'footprint' effect
             </summary>
         </member>
+        <member name="T:Nucleus.Game.Stages.StageCollection`1">
+            <summary>
+            A collection of stages
+            </summary>
+            <typeparam name="TStage"></typeparam>
+        </member>
+        <member name="T:Nucleus.Game.GameSaveFile">
+            <summary>
+            An abstract base class for documents which act as a save file
+            for a game state
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.GameSaveFile.RetrieveState">
+            <summary>
+            Retrieve the game state (if any) stored in this save file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Game.GameSaveFile.Load(Nucleus.Base.FilePath)">
+            <summary>
+            Load a ModelDocument from a file stored in binary format
+            </summary>
+            <param name="filePath">The path of the file to be loaded.</param>
+            <returns>The loaded document, if a document could indeed be loaded.
+            Else, null.</returns>
+        </member>
+        <member name="T:Nucleus.Game.GameSaveFile`1">
+            <summary>
+            An abstract base class for game save files which store a
+            particular type of game state
+            </summary>
+            <typeparam name="TState"></typeparam>
+        </member>
+        <member name="F:Nucleus.Game.GameSaveFile`1._State">
+            <summary>
+            Private backing member variable for the State property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.GameSaveFile`1.State">
+            <summary>
+            The state which is stored in this file
+            </summary>
+        </member>
+        <member name="M:Nucleus.Game.GameSaveFile`1.RetrieveState">
+            <summary>
+            Retrieve the game state (if any) stored in this save file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nucleus.Game.MapState">
+            <summary>
+            Base class for states which contains a MapStage
+            </summary>
+        </member>
         <member name="T:Nucleus.Game.RLState">
             <summary>
             A game state for Roguelikes
@@ -1350,20 +1753,16 @@
             Clean up after any elements which have been deleted in this turn
             </summary>
         </member>
+        <member name="M:Nucleus.Game.RLState.Save(Nucleus.Base.FilePath)">
+            <summary>
+            Save this state to the specified filepath
+            </summary>
+            <param name="filePath"></param>
+        </member>
         <member name="T:Nucleus.Game.BasicGameState`1">
             <summary>
             A basic game state that implements the fundamental mechanics
             of a game in a fairly general way
-            </summary>
-        </member>
-        <member name="F:Nucleus.Game.BasicGameState`1._Elements">
-            <summary>
-            Private backing member variable for the Elements property
-            </summary>
-        </member>
-        <member name="P:Nucleus.Game.BasicGameState`1.Elements">
-            <summary>
-            The collection of currently active game elements
             </summary>
         </member>
         <member name="F:Nucleus.Game.BasicGameState`1._Controlled">
@@ -1542,6 +1941,16 @@
             </summary>
             <param name="module"></param>
         </member>
+        <member name="M:Nucleus.Game.GameEngine.LoadState(Nucleus.Base.FilePath,System.Boolean)">
+            <summary>
+            Load a state from a save file, optionally setting it as the current
+            state.
+            </summary>
+            <param name="filePath">The filepath of the save file to load</param>
+            <param name="makeCurrent">If true, the loaded state will be set as
+            the current one.</param>
+            <returns>The loaded state, or null if reading the file was unsuccessful.</returns>
+        </member>
         <member name="T:Nucleus.Game.GameModule">
             <summary>
             Abstract base class for game modules.
@@ -1691,6 +2100,16 @@
             A game stage which represents level geometry via a map
             </summary>
         </member>
+        <member name="F:Nucleus.Game.MapStage._Elements">
+            <summary>
+            Private backing member variable for the Elements property
+            </summary>
+        </member>
+        <member name="P:Nucleus.Game.MapStage.Elements">
+            <summary>
+            The collection of currently active game elements in this stage
+            </summary>
+        </member>
         <member name="F:Nucleus.Game.MapStage._Map">
             <summary>
             Private backing member variable for the Map property
@@ -1714,6 +2133,11 @@
         <member name="P:Nucleus.Game.MoveCellEffect.MoveTo">
             <summary>
             The index of the mapcell to move to
+            </summary>
+        </member>
+        <member name="T:Nucleus.Game.RLStateSaveFile">
+            <summary>
+            Document which saves an RLState
             </summary>
         </member>
         <member name="T:Nucleus.Game.TurnContext">

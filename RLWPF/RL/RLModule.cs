@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RLWPF
+namespace RL
 {
     public class RLModule : GameModule
     {
@@ -24,17 +24,22 @@ namespace RLWPF
             stage.Map.InitialiseCells();
             state.Stage = stage;
 
+            // Items library:
+            var items = new ItemsLibrary();
+
             // Room templates:
             var stdRoom = new RoomTemplate();
             var largeRoom = new RoomTemplate(RoomType.Room, 3, 6, 4, 6);
             var corridor = new RoomTemplate(RoomType.Circulation, 1, 1, 4, 8);
+            var exit = new RoomTemplate(RoomType.Exit, 1, 1,1,1);
 
             // Create map:
             var generator = new DungeonArtitect(mapX, mapY);
             generator.Templates.Add(stdRoom);
             generator.Templates.Add(largeRoom);
             generator.Templates.Add(corridor);
-            generator.Generate(10, 14, stdRoom);
+            generator.Templates.Add(exit);
+            generator.Generate(10, 14, stdRoom, CompassDirection.South);
 
             var blueprint = generator.Blueprint;
 
@@ -49,7 +54,7 @@ namespace RLWPF
             {
                 for (int j = 0; j < mapY; j++)
                 {
-                    CellGenerationType cGT = blueprint[i, j];
+                    CellGenerationType cGT = blueprint[i, j].GenerationType;
                     if (cGT.IsWall() || cGT == CellGenerationType.Untouched)
                     {
                         var wall = new GameElement("Wall");
@@ -70,11 +75,7 @@ namespace RLWPF
                     {
                         if (rng.NextDouble() < 0.1)
                         {
-                            var eSword = new GameElement("Sword");
-                            eSword.SetData(
-                                new ASCIIStyle("↑"), new PrefabStyle("Sword"), //TODO: Prefab style
-                                new EquippableItem(),
-                                new ItemActions(new WindUpAction()));
+                            var eSword = items.Sword();
 
                             // Create enemy
                             var enemy2 = new GameElement("Enemy");
@@ -133,15 +134,13 @@ namespace RLWPF
             map[10, 13].PlaceInCell(stairs);
             //state.Elements.Add(stairs);
 
-            var sword = new GameElement("Sword");
-            //sword.Orientation = Angle.FromDegrees(45);
-            sword.SetData(
-                new ASCIIStyle("↑"), new PrefabStyle("Sword"),
-                new EquippableItem(),
-                new PickUp(),
-                new ItemActions(new WindUpAction()));
-            map[10, 12].PlaceInCell(sword);
-            state.Elements.Add(sword);
+            var sword = items.Sword();
+            //map[10, 12].PlaceInCell(sword);
+            //state.Elements.Add(sword);
+
+            var spear = items.Spear();
+            map[10, 12].PlaceInCell(spear);
+            state.Elements.Add(spear);
 
             // Create player character
             var hero = new GameElement("Hero");
@@ -151,7 +150,7 @@ namespace RLWPF
                 new MapAwareness(10), new Memorable(),
                 new HitPoints(9),
                 new Equipped(
-                    new EquipmentSlot("1", InputFunction.Ability_1),
+                    new EquipmentSlot("1", InputFunction.Ability_1, sword),
                     new EquipmentSlot("2", InputFunction.Ability_2),
                     new EquipmentSlot("3", InputFunction.Ability_3),
                     new EquipmentSlot("4", InputFunction.Ability_4),

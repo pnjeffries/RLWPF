@@ -294,3 +294,4 @@ C:\Users\jeffe\OneDrive\Documents\RLWPF\RLUnity\RLUnity\obj\Debug\Assembly-CShar
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLUnity\RLUnity\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLUnity\RLUnity\obj\Debug\Assembly-CSharp.dll
 C:\Users\jeffe\OneDrive\Documents\RLWPF\RLUnity\RLUnity\obj\Debug\Assembly-CSharp.pdb
+C:\Users\jeffe\OneDrive\Documents\RLWPF\RLUnity\RLUnity\Temp\bin\Debug\Nucleus.Game.xml

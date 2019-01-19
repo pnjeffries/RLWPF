@@ -126,6 +126,25 @@
             <param name="v"></param>
             <returns></returns>
         </member>
+        <member name="T:Nucleus.Unity.UnityMeshExtensions">
+            <summary>
+            Extension methods for the Unity Mesh type
+            </summary>
+        </member>
+        <member name="M:Nucleus.Unity.UnityMeshExtensions.SetVertexColoursFromVisionMap(UnityEngine.Mesh,Nucleus.Geometry.SquareCellMap{System.Int32},Nucleus.Geometry.SquareCellMap{System.Int32},System.Double,Nucleus.Maths.Interpolation,System.Double)">
+            <summary>
+            Set the vertex colours of this mesh based on the specified fieldOfView map.
+            For this to do anything at all reasonable, the mesh should have been generated
+            as a regular grid with (mapXSize + 2) * 2 + 1 vertices in the first direction via a function
+            such as MeshBuilder.AddQuadGridMesh.
+            </summary>
+            <param name="mesh"></param>
+            <param name="fieldOfView"></param>
+            <param name="oldFieldOfView"></param>
+            <param name="t"></param>
+            <param name="tweening"></param>
+            <param name="power">The power to use for interpolating values in-between cells</param>
+        </member>
         <member name="T:Nucleus.Unity.UnityQuaternionExtensions">
             <summary>
             Extension methods for the unity quaternion class
@@ -139,12 +158,12 @@
             <param name="quaternion"></param>
             <returns></returns>
         </member>
-        <member name="T:Nucleus.Unity.Extensions.UnityVector3Extensions">
+        <member name="T:Nucleus.Unity.UnityVector3Extensions">
             <summary>
             Extension methods for Unity's Vector3
             </summary>
         </member>
-        <member name="M:Nucleus.Unity.Extensions.UnityVector3Extensions.ToNucleusVector(UnityEngine.Vector3)">
+        <member name="M:Nucleus.Unity.UnityVector3Extensions.ToNucleusVector(UnityEngine.Vector3)">
             <summary>
             Convert this Vector3 to an equivalent Nucleus Vector.
             </summary>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Nucleus.Game;
-using RLWPF;
+using RL;
 
 /// <summary>
 /// The central unity game manager which takes charge of 
@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     {
         GameEngine.Instance.LoadModule(new RLModule());
         GameEngine.Instance.StartUp();
+
+        Time.timeScale = 1.0f;
     }
 
     // Start is called before the first frame update

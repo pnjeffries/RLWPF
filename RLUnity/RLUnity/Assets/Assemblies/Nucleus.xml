@@ -1854,6 +1854,11 @@
             <param name="item"></param>
             <returns></returns>
         </member>
+        <member name="T:Nucleus.Base.StringParameter">
+            <summary>
+            A named input or output parameter that holds a string value
+            </summary>
+        </member>
         <member name="T:Nucleus.Base.Bool6D">
             <summary>
             6D Boolean Structure.
@@ -3023,7 +3028,7 @@
             Extension methods for INamed objects and collections thereof
             </summary>
         </member>
-        <member name="M:Nucleus.Base.INamedExtensions.FindByName``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+        <member name="M:Nucleus.Base.INamedExtensions.FindByName``1(System.Collections.Generic.IEnumerable{``0},System.String,``0)">
             <summary>
             Find an item in this collection by name.
             </summary>
@@ -3048,6 +3053,18 @@
             </summary>
             <typeparam name="TItem"></typeparam>
             <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Base.INamedExtensions.NextAvailableName``1(System.Collections.Generic.IList{``0},System.String,``0,System.Boolean,System.Boolean)">
+            <summary>
+            Return the next version of this name with an attached numerical postfix that
+            will be a unique name in this collection.
+            </summary>
+            <param name="list"></param>
+            <param name="baseName">The base name</param>
+            <param name="ignore">Optional.  If specified, this object will be ignored during the search.</param>
+            <param name="enforcePostFix">Optional.  If set true, a postfix numeral will always be applied, even if it is 1.</param>
+            <param name="includeSpace">Optional.  If true (default) a space will be inserted between the name and number</param>
             <returns></returns>
         </member>
         <member name="T:Nucleus.Base.IOwned`1">
@@ -3538,6 +3555,27 @@
             A collection of unique objects.
             </summary>
         </member>
+        <member name="T:Nucleus.Debugging.CollectionDebugView`1">
+            <summary>
+            A collection debug view to present collection items in 
+            the debug inspector.
+            Based on https://www.codeproject.com/Articles/28405/Make-the-debugger-show-the-contents-of-your-custom
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Nucleus.Extensions.AssemblyExtensions">
+            <summary>
+            Extension methods for the Assembly class
+            </summary>
+        </member>
+        <member name="M:Nucleus.Extensions.AssemblyExtensions.GetUnserializableTypes(System.Reflection.Assembly)">
+            <summary>
+            Get a list of all non-static types in this assembly which have not been tagged
+            with the [Serializable] attribute.
+            </summary>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
         <member name="T:Nucleus.Extensions.RandomExtensions">
             <summary>
             Extension methods for 
@@ -3725,6 +3763,16 @@
             <param name="list"></param>
             <param name="index">The index.  Will be bounded to the list domain.</param>
             <param name="reverse">Optional.  If true the indexing will be reversed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Extensions.IListExtensions.GetOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            Get the item at the specified index, or the default value
+            of the relevant type if the index is outside the bounds of the array.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="index"></param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Extensions.IListExtensions.GetWrapped``1(System.Collections.Generic.IList{``0},System.Int32,System.Boolean)">
@@ -4399,6 +4447,13 @@
             <param name="values"></param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Extensions.DoubleExtensions.IsWholeNumber(System.Double)">
+            <summary>
+            Is this value (within tolerance of) a whole number?
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
         <member name="T:Nucleus.Extensions.ICollectionExtensions">
             <summary>
             ICollection extension methods
@@ -4818,6 +4873,18 @@
             <param name="startWrapper">The string to be placed before each entry</param>
             <param name="endWrapper">The string to be placed after each entry</param>
             <returns>A string formatted in the specified way.</returns>
+        </member>
+        <member name="M:Nucleus.Extensions.ArrayExtensions.GetSafe``1(``0[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            Get a value from this 2D array, checking if the specified indices are outside
+            of the bounds of the array and if so returning the default value of the specified
+            type.
+            </summary>
+            <typeparam name="TArray"></typeparam>
+            <param name="array"></param>
+            <param name="i"></param>
+            <param name="j"></param>
+            <returns></returns>
         </member>
         <member name="T:Nucleus.Extensions.TypeExtensions">
             <summary>
@@ -5356,6 +5423,42 @@
             </summary>
             <param name="profile">The profile perimeter curve.  Must be planar.</param>
             <param name="path">The extrusion vector</param>
+        </member>
+        <member name="T:Nucleus.Geometry.HandSide">
+            <summary>
+            Enum to represent a direction either to the left or right
+            </summary>
+        </member>
+        <member name="F:Nucleus.Geometry.HandSide.Right">
+            <summary>
+            The right-hand side
+            </summary>
+        </member>
+        <member name="F:Nucleus.Geometry.HandSide.Left">
+            <summary>
+            The left-hand side
+            </summary>
+        </member>
+        <member name="T:Nucleus.Geometry.HandSideExtensions">
+            <summary>
+            Extension methods for the HandSide enum
+            </summary>
+        </member>
+        <member name="M:Nucleus.Geometry.HandSideExtensions.Flip(Nucleus.Geometry.HandSide)">
+            <summary>
+            Return the opposite side
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.HandSideExtensions.OffsetSign(Nucleus.Geometry.HandSide)">
+            <summary>
+            Returns either 1 or -1 depending on whether this side
+            would typically require a positive or negative curve
+            offset value
+            </summary>
+            <param name="side"></param>
+            <returns></returns>
         </member>
         <member name="T:Nucleus.Geometry.Rectangle`1">
             <summary>
@@ -6808,6 +6911,14 @@
             <param name="cellIndex"></param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Geometry.SquareCellMap`1.Exists(System.Int32,System.Int32)">
+            <summary>
+            Does a cell exist at the specified indices
+            </summary>
+            <param name="i"></param>
+            <param name="j"></param>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Geometry.SquareCellMap`1.IndexAt(Nucleus.Geometry.Vector)">
             <summary>
             Get the index of the cell at the specified location
@@ -7688,6 +7799,16 @@
             <param name="segEnd"></param>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Geometry.Intersect.OffsetExtensionDistance(Nucleus.Geometry.Angle,System.Double,System.Double)">
+            <summary>
+            Calculate the distance by which an offset of a line might be extended until it intersects
+            with another offset line at an angle to it.  
+            </summary>
+            <param name="angle">The angle between line B and line A</param>
+            <param name="offsetA">The offset of line A</param>
+            <param name="offsetB">The offset of line B</param>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Geometry.Intersect.CurveInPolygonXY(Nucleus.Geometry.Curve,System.Collections.Generic.IList{Nucleus.Geometry.Vertex})">
             <summary>
             Find the section(s) of a polycurve which lie(s) inside the specified polygon
@@ -8212,6 +8333,11 @@
         <member name="P:Nucleus.Geometry.Angle.IsMulti">
             <summary>
             Does this value represent multiple different angles?
+            </summary>
+        </member>
+        <member name="P:Nucleus.Geometry.Angle.IsTiny">
+            <summary>
+            Is this angle so small it can be safely treated as 0?
             </summary>
         </member>
         <member name="M:Nucleus.Geometry.Angle.#ctor(System.Double)">
@@ -8807,6 +8933,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Nucleus.Geometry.MeshFace.ShortetEdge">
+            <summary>
+            Get the index of the shortest edge of this face
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Nucleus.Geometry.MeshFace.LongestEdgeLengthSquared">
             <summary>
             Get the squared length of the longest edge of this face
@@ -9013,6 +9145,18 @@
             </summary>
             <param name="edges"></param>
             <param name="addTo"></param>
+        </member>
+        <member name="M:Nucleus.Geometry.MeshFace.OppositeEdgeIndices">
+            <summary>
+            Generate an array which indicates, for each edge around this
+            face, which is designated the 'opposite' edge.
+            In the case of quads and n-gons with an even number of sides,
+            this is the edge offset by Count/2 places.
+            In the case of tris or faces with odd numbers of sides, the shortest,
+            side is skipped and has no opposite.  This is indicated in the result
+            with a value of -1.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Nucleus.Geometry.MeshFace.RefinementVertex(Nucleus.Meshing.MeshDivisionEdge,Nucleus.Meshing.MeshDivisionEdge,Nucleus.Geometry.Vector,System.Int32)">
             <summary>
@@ -10424,6 +10568,14 @@
             </summary>
             <param name="vertex">The vertex.  
             Must be a defining vertex of this curve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.Curve.TangentAt(Nucleus.Model.Node)">
+            <summary>
+            Evaluate the tangent unit vector at the specified node, which is
+            attached to a vertex of this curve.
+            </summary>
+            <param name="node"></param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Geometry.Curve.TangentAt(System.Double)">
@@ -12961,7 +13113,8 @@
         <member name="M:Nucleus.Geometry.Vertex.#ctor(Nucleus.Model.Node)">
             <summary>
             Node constructor.
-            Initialises a new vertex at the specified node position.
+            Initialises a new vertex at the specified node position
+            and connected to the specified node.
             </summary>
             <param name="node"></param>
         </member>
@@ -14093,6 +14246,25 @@
             </summary>
             <param name="tokens"></param>
             <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.Vector.Create2D(System.Double[])">
+            <summary>
+            Create an array of vectors from a list of components, alternating
+            between X and Y.  If the entered set of components is of an odd number,
+            the Y coordinate of the last point will be taken as 0.
+            </summary>
+            <param name="components"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Geometry.Vector.Create3D(System.Double[])">
+            <summary>
+            Create an array of vectors from a list of components, cycling through
+            X, Y and Z.  If the entered set of components is of an insufficient number
+            to provide the full three components of each vector, missing Y and Z values
+            for the final vector will be taken as zero.
+            </summary>
+            <param name="components"></param>
             <returns></returns>
         </member>
         <member name="M:Nucleus.Geometry.Vector.op_Equality(Nucleus.Geometry.Vector,Nucleus.Geometry.Vector)">
@@ -16836,6 +17008,12 @@
             Does this interval represent a range of
             </summary>
         </member>
+        <member name="P:Nucleus.Maths.IntInterval.IsSingularity">
+            <summary>
+            Is this a singularity?  i.e. are the maximum and minimum values the same?
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:Nucleus.Maths.IntInterval.Min">
             <summary>
             Get the minimum value encompassed by this interval
@@ -16889,6 +17067,14 @@
             Generate a random integer within this interval
             </summary>
             <param name="rng">The random number generator to use</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Maths.IntInterval.WithEnd(System.Int32)">
+            <summary>
+            Create a new interval with the same start value as this one
+            but with the new specified end value.
+            </summary>
+            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="T:Nucleus.Maths.NamedDataSet">
@@ -19207,6 +19393,18 @@
             <param name="direction">The direction of the load</param>
             <param name="length">The length of the arrows representing the load</param>
             <param name="zigZagLength"></param>
+        </member>
+        <member name="M:Nucleus.Meshing.MeshBuilderBase.AddQuadGridMesh(Nucleus.Geometry.Vector,Nucleus.Geometry.Vector,Nucleus.Geometry.Vector,System.Int32,System.Int32)">
+            <summary>
+            Generate a regular grillage quad mesh
+            </summary>
+            <param name="origin">An origin point at which to start generating the grid</param>
+            <param name="uAxis">A vector which descibes the displacement between each vertex 
+            in the mesh in the first ('u') axis</param>
+            <param name="vAxis">A vector which describes the displacement between each vertex
+            in the mesh in the second ('v') axis</param>
+            <param name="uCount">The number of vertices in the first ('u') direction.</param>
+            <param name="vCount">The number of vertices in the second ('v') direction.</param>
         </member>
         <member name="T:Nucleus.Meshing.MeshBuilderBase`1">
             <summary>
@@ -23683,6 +23881,17 @@
             Get the first encountered element of the specified type connected to this node
             </summary>
             <typeparam name="TElement"></typeparam>
+            <param name="undeletedOnly"></param>
+            <param name="ignore"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nucleus.Model.Node.GetConnectedElementOnSide``1(Nucleus.Geometry.Vector,Nucleus.Geometry.HandSide,System.Boolean,Nucleus.Model.Element)">
+            <summary>
+            Get the first encountered element approached from the specified side of the specified direction
+            </summary>
+            <typeparam name="TElement"></typeparam>
+            <param name="direction"></param>
+            <param name="side"></param>
             <param name="undeletedOnly"></param>
             <param name="ignore"></param>
             <returns></returns>

@@ -49,6 +49,7 @@ namespace RLWPF
             var stdRoom = new RoomTemplate();
             var largeRoom = new RoomTemplate(RoomType.Room, 3, 6, 4, 6);
             var corridor = new RoomTemplate(RoomType.Circulation, 1, 1, 4, 8);
+            var exit = new RoomTemplate(RoomType.Exit, 1, 1, 1, 1);
             //corridor.ExitPlacement = ExitPlacement.Opposite;
             var corridor2 = new RoomTemplate(RoomType.Circulation, 1, 1, 1, 8);
             //corridor2.ExitPlacement = ExitPlacement.Opposite_Side;
@@ -60,7 +61,8 @@ namespace RLWPF
             generator.Templates.Add(largeRoom);
             generator.Templates.Add(corridor);
             generator.Templates.Add(corridor2);
-            generator.Generate(10, 14, stdRoom);
+            generator.Templates.Add(exit);
+            generator.Generate(10, 14, stdRoom, CompassDirection.East);
 
 
             _Timer = new DispatcherTimer();

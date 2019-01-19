@@ -3,7 +3,6 @@ using Nucleus.Maths;
 using Nucleus.Rendering;
 using Nucleus.UI;
 using Nucleus.Unity;
-using Nucleus.Unity.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
